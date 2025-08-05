@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, FileText, Building, Code, Clock } from 'lucide-react';
+import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, FileText, Building, Code, Clock, Shield } from 'lucide-react';
 
 const trustSeals = [
   {
@@ -36,6 +36,14 @@ const showcaseFeatures = [
     status: 'available'
   },
   {
+    icon: Shield,
+    title: 'Compliance Dashboard',
+    description: 'Monitor regulatory adherence and system compliance in real-time',
+    href: '/compliance',
+    color: 'bg-emerald-500',
+    status: 'available'
+  },
+  {
     icon: Building,
     title: 'Real Use Cases',
     description: 'Explore how organizations across industries implement CIAF',
@@ -49,14 +57,6 @@ const showcaseFeatures = [
     description: 'Deep dive into implementation details and code examples',
     href: '/architecture',
     color: 'bg-purple-500',
-    status: 'available'
-  },
-  {
-    icon: FileText,
-    title: 'API Documentation',
-    description: 'Complete API reference and SDK documentation',
-    href: '/api-docs',
-    color: 'bg-orange-500',
     status: 'available'
   }
 ];

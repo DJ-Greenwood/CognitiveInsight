@@ -12,10 +12,9 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 const navItems = [
   { label: 'Framework', href: '/framework' },
   { label: 'Demo', href: '/demo' },
+  { label: 'Compliance', href: '/compliance' },
   { label: 'Use Cases', href: '/use-cases' },
   { label: 'Architecture', href: '/architecture' },
-  { label: 'API Docs', href: '/api-docs' },
-  { label: 'API Tester', href: '/api-tester' },
   { label: 'Services', href: '/services' },
   { label: 'Trust & Privacy', href: '/trust' },
   { label: 'Thought Library', href: '/library' },
