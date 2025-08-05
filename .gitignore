@@ -47,3 +47,6 @@ firestore-debug.log
 # remove drawing and docs folders
 /drawing
 /docs
+
+# remove public folder
+/public
