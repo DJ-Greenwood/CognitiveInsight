@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Wand2, AlertTriangle, Lightbulb, BadgeCheck } from 'lucide-react';
+import { Wand2, AlertTriangle, Lightbulb, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function RegulatoryInsightToolPage() {

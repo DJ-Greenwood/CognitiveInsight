@@ -243,20 +243,20 @@ export default function TechnicalArchitecturePage() {
               <CardContent className="space-y-4">
                  <p className="text-sm text-muted-foreground">The following diagrams illustrate the core concepts of our patented architecture, from key derivation to model versioning.</p>
                  <div className="grid grid-cols-2 gap-4">
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 1: System Overview" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="system architecture diagram" />
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 2: Key Derivation Flow" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="data flow diagram" />
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 1: CIAF System Overview" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="system architecture diagram" />
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 2: Cryptographic Key Derivation Flow" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="key derivation flow" />
                     <Image src="https://placehold.co/400x300.png" alt="Diagram 3: Provenance Capsule Structure" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="data structure diagram" />
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 4: Merkle Tree Integrity" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="merkle tree diagram" />
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 4: Merkle Tree Structure for Integrity" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="merkle tree diagram" />
                  </div>
               </CardContent>
            </Card>
            <Card>
               <CardHeader>
                  <CardTitle className="font-headline">Model Versioning Diagram</CardTitle>
-                 <CardDescription>Diagram 5: Tracking model evolution with cryptographic certainty.</CardDescription>
+                 <CardDescription>Diagram 5: Tracking model and session evolution with cryptographic certainty.</CardDescription>
               </CardHeader>
               <CardContent>
-                 <Image src="https://placehold.co/600x400.png" alt="Diagram 5: Model Versioning" width={600} height={400} className="rounded-lg shadow-md" data-ai-hint="version control graph" />
+                 <Image src="https://placehold.co/600x400.png" alt="Diagram 5: Model and Session Versioning" width={600} height={400} className="rounded-lg shadow-md" data-ai-hint="version control graph" />
               </CardContent>
            </Card>
         </div>
