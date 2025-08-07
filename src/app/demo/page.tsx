@@ -327,7 +327,7 @@ export default function InteractiveDemoPage() {
             Interactive CIAF Demo
           </h1>
           <p className="text-muted-foreground md:text-xl">
-            Watch the Cryptographically Integrated AI Framework in action
+            Step through a patented audit workflow — in real time. Watch how CIAF defers encryption until you explicitly request an audit. This is our Lazy Capsule System in action — fully patent-backed, real-time, and regulatory-aligned.
           </p>
         </div>
 

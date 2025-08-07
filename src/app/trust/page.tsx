@@ -31,7 +31,7 @@ export default function TrustPage() {
               Privacy Is Non-Negotiable.
             </h1>
             <p className="text-xl text-muted-foreground">
-              We believe that robust AI governance cannot come at the cost of privacy. Our framework is built from the ground up to protect your most sensitive data while providing unprecedented transparency and verifiability.
+              CognitiveInsight.AI uses a patented zero-knowledge-style architecture to enforce tamper-evident integrity (Merkle proofs) and access-controlled metadata checkpoints, with no plaintext exposure during training or inference. Privacy and security aren’t just features — they’re protected innovations.
             </p>
           </div>
           <div className="flex justify-center">

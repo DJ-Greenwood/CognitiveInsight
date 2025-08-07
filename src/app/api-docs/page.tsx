@@ -213,10 +213,10 @@ export default function APIDocumentationPage() {
       <div className="mx-auto max-w-6xl space-y-8">
         <div className="text-center space-y-4">
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
-            API Documentation
+            Patent-Grade Cryptographic APIs
           </h1>
           <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-            Complete API reference and SDK documentation for integrating CIAF into your AI systems
+            Interact with APIs that power our lazy capsule generation, Merkle proof validation, and audit export tools — the same methods protected under our U.S. patent application.
           </p>
           <div className="flex justify-center gap-4">
             <Button variant="outline">

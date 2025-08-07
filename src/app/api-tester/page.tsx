@@ -208,7 +208,7 @@ export default function APITesterPage() {
       <div className="mb-8">
         <h1 className="text-4xl font-bold mb-4">CIAF API Tester</h1>
         <p className="text-lg text-muted-foreground">
-          Test the Cryptographically Integrated AI Framework API endpoints interactively.
+          Interact with APIs that power our lazy capsule generation, Merkle proof validation, and audit export tools — the same methods protected under our U.S. patent application.
         </p>
       </div>
 

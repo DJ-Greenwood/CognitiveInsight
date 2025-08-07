@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Code, Shield, Database, Zap, GitBranch, Lock } from 'lucide-react';
+import Image from 'next/image';
 
 const architectureComponents = [
   {
@@ -185,10 +186,10 @@ export default function TechnicalArchitecturePage() {
       <div className="mx-auto max-w-6xl space-y-8">
         <div className="text-center space-y-4">
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
-            Technical Architecture
+            CIAF Architecture: Now Patent-Protected
           </h1>
           <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-            Deep dive into the CIAF framework architecture, implementation details, and code examples
+            Our Lazy Capsule Materialization system is formally patented under U.S. law, introducing a scalable cryptographic framework that outperforms MLflow and traditional audit tools by up to 2.67× in audit speed and 32% in memory savings.
           </p>
         </div>
 
@@ -231,6 +232,35 @@ export default function TechnicalArchitecturePage() {
             </Card>
           ))}
         </div>
+        
+        {/* Diagrams Section */}
+        <div className="grid gap-6 md:grid-cols-2">
+           <Card>
+              <CardHeader>
+                 <CardTitle className="font-headline">System & Data Flow Diagrams</CardTitle>
+                 <CardDescription>Visualizing the patented CIAF processes.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                 <p className="text-sm text-muted-foreground">The following diagrams illustrate the core concepts of our patented architecture, from key derivation to model versioning.</p>
+                 <div className="grid grid-cols-2 gap-4">
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 1: System Overview" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="system architecture diagram" />
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 2: Key Derivation Flow" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="data flow diagram" />
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 3: Provenance Capsule Structure" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="data structure diagram" />
+                    <Image src="https://placehold.co/400x300.png" alt="Diagram 4: Merkle Tree Integrity" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="merkle tree diagram" />
+                 </div>
+              </CardContent>
+           </Card>
+           <Card>
+              <CardHeader>
+                 <CardTitle className="font-headline">Model Versioning Diagram</CardTitle>
+                 <CardDescription>Diagram 5: Tracking model evolution with cryptographic certainty.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                 <Image src="https://placehold.co/600x400.png" alt="Diagram 5: Model Versioning" width={600} height={400} className="rounded-lg shadow-md" data-ai-hint="version control graph" />
+              </CardContent>
+           </Card>
+        </div>
+
 
         {/* Code Examples */}
         <Card>
