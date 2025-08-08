@@ -29,9 +29,9 @@ export const articles: Article[] = [
   {
     slug: 'audit-receipts-future-of-governance',
     title: 'Why Audit Receipts Will Define AI Governance in the Next Decade',
-    excerpt: 'Explore the concept of "Uncertainty Receipts" and why they are the key to building trust between AI systems, regulators, and the public.',
+    excerpt: 'Explore the concept of "Compliance Receipts" and why they are the key to building trust between AI systems, regulators, and the public.',
     content: `
-<p>In the coming years, AI governance will hinge on one critical element: verifiable proof. It won't be enough to say an AI system is fair or compliant; organizations will need to prove it. This is the challenge that Uncertainty Receipts, a core component of CIAF, are designed to solve.</p>
+<p>In the coming years, AI governance will hinge on one critical element: verifiable proof. It won't be enough to say an AI system is fair or compliant; organizations will need to prove it. This is the challenge that Compliance Receipts, a core component of CIAF, are designed to solve.</p>
 <h3 class="font-headline text-xl font-semibold mt-6 mb-2">The Power of Receipts:</h3>
 <ul class="list-disc pl-6 space-y-2">
   <li><strong>Immutable Records:</strong> Each receipt is a cryptographically sealed, tamper-evident record of a model's decision-making process, including its known limitations and uncertainties.</li>

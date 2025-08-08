@@ -1,9 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, FileText, Building, Code, Clock, Shield } from 'lucide-react';
+import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock } from 'lucide-react';
 
 const trustSeals = [
   {
@@ -16,46 +15,38 @@ const trustSeals = [
     icon: KeyRound,
     title: 'Model Anchor Keys',
     description: 'Unique identifiers that link AI models to their authorized datasets and use cases.',
-    link: '/architecture'
+    link: '/framework'
   },
   {
     icon: Receipt,
     title: 'Uncertainty Receipts',
-    description: 'Tamper-evident proof of a model\'s performance, limitations, and compliance checks.',
-    link: '/demo'
+    description: 'Tamper-evident proof of a model&apos;s performance, limitations, and compliance checks.',
+    link: '/framework'
   },
 ];
 
 const showcaseFeatures = [
   {
     icon: PlayCircle,
-    title: 'Interactive Demo',
-    description: 'See CIAF in action with our step-by-step interactive demonstration',
-    href: '/demo',
+    title: 'Interactive Framework',
+    description: 'Explore CIAF components and their cryptographic integration',
+    href: '/framework',
     color: 'bg-blue-500',
     status: 'available'
   },
   {
-    icon: Shield,
-    title: 'Compliance Dashboard',
-    description: 'Monitor regulatory adherence and system compliance in real-time',
-    href: '/compliance',
-    color: 'bg-emerald-500',
-    status: 'available'
-  },
-  {
     icon: Building,
-    title: 'Real Use Cases',
-    description: 'Explore how organizations across industries implement CIAF',
-    href: '/use-cases',
+    title: 'About CognitiveInsight',
+    description: 'Learn about our mission and approach to AI governance',
+    href: '/about',
     color: 'bg-green-500',
     status: 'available'
   },
   {
     icon: Code,
-    title: 'Technical Architecture',
-    description: 'Deep dive into implementation details and code examples',
-    href: '/architecture',
+    title: 'Contact & Support',
+    description: 'Get in touch with our team for technical discussions',
+    href: '/contact',
     color: 'bg-purple-500',
     status: 'available'
   }
@@ -99,10 +90,10 @@ export default function Home() {
             </div>
             <div className="mt-8 flex justify-center gap-4">
               <Button size="lg" asChild variant="secondary">
-                <Link href="/demo">Try Interactive Demo</Link>
+                <Link href="/framework">Explore Framework</Link>
               </Button>
               <Button size="lg" asChild variant="outline" className="bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                <Link href="/contact">Request a Demo</Link>
+                <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
           </div>
@@ -120,7 +111,7 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-4 lg:max-w-none mt-12">
+            <div className="mx-auto grid max-w-4xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
               {showcaseFeatures.map((feature) => (
                 <Link key={feature.title} href={feature.href}>
                   <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 cursor-pointer relative">
@@ -175,14 +166,13 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-12 text-center">
-              <Image 
-                src="https://placehold.co/1200x600.png" 
-                alt="CIAF ML Pipeline Graphic"
-                data-ai-hint="AI pipeline diagram"
-                width={1200}
-                height={600}
-                className="mx-auto rounded-lg shadow-2xl"
-              />
+              <div className="mx-auto rounded-lg shadow-2xl bg-muted/30 border-2 border-dashed border-muted-foreground/20 p-16 max-w-4xl">
+                <div className="flex flex-col items-center justify-center h-96">
+                  <div className="text-6xl mb-4">🚧</div>
+                  <h3 className="text-2xl font-semibold text-muted-foreground mb-2">Coming Soon</h3>
+                  <p className="text-muted-foreground">CIAF ML Pipeline Diagram</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -196,9 +186,9 @@ export default function Home() {
                   <Clock className="w-4 h-4 mr-2" />
                   Roadmap 2025-2026
                 </Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">What's Coming Next</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">What&apos;s Coming Next</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We're continuously expanding CIAF with cutting-edge features to meet the evolving needs of AI governance and compliance.
+                  We&apos;re continuously expanding CIAF with cutting-edge features to meet the evolving needs of AI governance and compliance.
                 </p>
               </div>
             </div>
@@ -275,17 +265,16 @@ export default function Home() {
                         ))}
                     </ul>
                     <Button asChild>
-                        <Link href="/trust">Learn More About Trust & Privacy</Link>
+                        <Link href="/contact">Contact Us for More Information</Link>
                     </Button>
                 </div>
-                <Image
-                    src="https://placehold.co/600x400.png"
-                    width={600}
-                    height={400}
-                    alt="Trust Graphic"
-                    data-ai-hint="data security illustration"
-                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                />
+                <div className="rounded-xl shadow-2xl bg-muted/30 border-2 border-dashed border-muted-foreground/20 p-12 max-w-lg mx-auto">
+                  <div className="flex flex-col items-center justify-center h-64">
+                    <div className="text-4xl mb-3">🔒</div>
+                    <h3 className="text-xl font-semibold text-muted-foreground mb-1">Coming Soon</h3>
+                    <p className="text-sm text-muted-foreground text-center">Trust & Security Illustration</p>
+                  </div>
+                </div>
             </div>
         </section>
       </main>

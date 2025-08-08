@@ -8,7 +8,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 
 function SubmitButton() {
@@ -48,7 +47,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">Contact Us</h1>
         <p className="mt-4 text-muted-foreground md:text-xl">
-          Have a question or want to see a demo? We'd love to hear from you.
+          Have a question or want to see a demo? We&apos;d love to hear from you.
         </p>
       </div>
 
@@ -74,10 +73,10 @@ export default function ContactPage() {
         </form>
         <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
           <Button variant="secondary" asChild>
-            <a href="/contact">Request a Demo</a>
+            <a href="mailto:Insight@CognitiveInsight.ai">Email Us Directly</a>
           </Button>
-          <Button variant="outline" asChild>
-            <a href="/ciaf-whitepaper.pdf" download>Download CIAF Overview</a>
+          <Button variant="outline" disabled>
+            White Paper - Patent Pending
           </Button>
         </div>
       </div>

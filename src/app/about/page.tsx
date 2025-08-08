@@ -1,19 +1,14 @@
-import Image from 'next/image';
-
 export default function AboutPage() {
   return (
     <div className="container py-12 md:py-24">
       <div className="mx-auto max-w-4xl">
         <div className="grid gap-10 md:grid-cols-3">
           <div className="md:col-span-1 flex justify-center items-start">
-            <Image
-              src="https://placehold.co/400x400.png"
-              width={400}
-              height={400}
-              alt="Denzil J. Greenwood Headshot"
-              data-ai-hint="professional headshot"
-              className="rounded-full aspect-square object-cover shadow-lg"
-            />
+            <div className="bg-muted/30 rounded-full aspect-square shadow-lg border-2 border-dashed border-muted-foreground/20 p-8 w-80 h-80 flex flex-col items-center justify-center">
+              <div className="text-6xl mb-4">👨‍💼</div>
+              <h3 className="text-xl font-semibold text-muted-foreground mb-1">Coming Soon</h3>
+              <p className="text-sm text-muted-foreground text-center">Professional Photo</p>
+            </div>
           </div>
           <div className="md:col-span-2 space-y-6">
             <div>
