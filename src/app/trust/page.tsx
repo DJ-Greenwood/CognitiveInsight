@@ -31,7 +31,7 @@ export default function TrustPage() {
               Privacy Is Non-Negotiable.
             </h1>
             <p className="text-xl text-muted-foreground">
-              CognitiveInsight.AI uses a patented zero-knowledge-style architecture to enforce tamper-evident integrity (Merkle proofs) and access-controlled metadata checkpoints, with no plaintext exposure during training or inference. Privacy and security aren’t just features — they’re protected innovations.
+              CognitiveInsight.AI uses a zero-knowledge-style architecture to enforce tamper-evident integrity (Merkle proofs) and access-controlled metadata checkpoints, with no plaintext exposure during training or inference. Privacy and security aren't just features — they're core innovations.
             </p>
           </div>
           <div className="flex justify-center">

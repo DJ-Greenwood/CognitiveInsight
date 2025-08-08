@@ -186,10 +186,10 @@ export default function TechnicalArchitecturePage() {
       <div className="mx-auto max-w-6xl space-y-8">
         <div className="text-center space-y-4">
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
-            CIAF Architecture: Now Patent-Protected
+            CIAF Architecture
           </h1>
           <p className="text-muted-foreground md:text-xl max-w-3xl mx-auto">
-            Our Lazy Capsule Materialization system is formally patented under U.S. law, introducing a scalable cryptographic framework that outperforms MLflow and traditional audit tools by up to 2.67× in audit speed and 32% in memory savings.
+            Our Lazy Capsule Materialization system introduces a scalable cryptographic framework that outperforms MLflow and traditional audit tools by up to 2.67× in audit speed and 32% in memory savings.
           </p>
         </div>
 
@@ -238,10 +238,10 @@ export default function TechnicalArchitecturePage() {
            <Card>
               <CardHeader>
                  <CardTitle className="font-headline">System & Data Flow Diagrams</CardTitle>
-                 <CardDescription>Visualizing the patented CIAF processes.</CardDescription>
+                 <CardDescription>Visualizing the CIAF processes.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                 <p className="text-sm text-muted-foreground">The following diagrams illustrate the core concepts of our patented architecture, from key derivation to model versioning.</p>
+                 <p className="text-sm text-muted-foreground">The following diagrams illustrate the core concepts of our architecture, from key derivation to model versioning.</p>
                  <div className="grid grid-cols-2 gap-4">
                     <Image src="https://placehold.co/400x300.png" alt="Diagram 1: CIAF System Overview" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="system architecture diagram" />
                     <Image src="https://placehold.co/400x300.png" alt="Diagram 2: Cryptographic Key Derivation Flow" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="key derivation flow" />

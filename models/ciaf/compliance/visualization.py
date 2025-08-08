@@ -429,11 +429,6 @@ class CIAFVisualizationEngine:
                     "nist_ai_rmf": "Govern function - Transparent AI system documentation",
                     "accessibility_standards": "WCAG 2.1 AA compliance for inclusive access",
                 },
-                "patent_protection": {
-                    "invention_claim": "Interactive 3D visualization of cryptographically anchored model metadata chains",
-                    "differentiator": "Real-time traceability of AI decision paths for regulatory compliance",
-                    "technical_advantage": "Zero-knowledge provenance visualization without exposing sensitive data",
-                },
             }
         }
 
@@ -587,14 +582,8 @@ def demo_visualization_capabilities():
     print(f"   WCAG Compliant: {viz_info['accessibility']['wcag_compliant']}")
     print(f"   Mobile Compatible: {viz_info['performance']['mobile_compatible']}")
 
-    # Show patent claims
-    print("\n5. Patent Protection Information")
-    patent_info = viz_info["patent_protection"]
-    print(f"   Invention Claim: {patent_info['invention_claim']}")
-    print(f"   Technical Advantage: {patent_info['technical_advantage']}")
-
     # Show regulatory alignment
-    print(f"\n6. Regulatory Compliance Alignment")
+    print(f"\n5. Regulatory Compliance Alignment")
     for framework, description in viz_info["regulatory_compliance"].items():
         print(f"   {framework.upper()}: {description}")
 

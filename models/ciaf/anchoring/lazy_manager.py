@@ -4,7 +4,7 @@ Lazy capsule management system.
 This module orchestrates lazy capsule materialization across multiple datasets
 and provides high-level interfaces for dataset management and on-demand capsule materialization.
 
-UPDATED: Now supports true lazy behavior that achieves patent-claimed performance improvements.
+UPDATED: Now supports true lazy behavior that achieves optimized performance improvements.
 """
 
 from datetime import datetime
@@ -29,7 +29,7 @@ class LazyProvenanceManager:
         Initialize the lazy provenance manager.
 
         Args:
-            use_true_lazy: If True, use TrueLazyManager for patent-level performance.
+            use_true_lazy: If True, use TrueLazyManager for optimized performance.
                           If False, use legacy behavior for backwards compatibility.
         """
         self.dataset_anchors: Dict[str, DatasetAnchor] = {}

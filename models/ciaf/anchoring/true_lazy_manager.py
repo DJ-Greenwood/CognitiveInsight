@@ -1,8 +1,8 @@
 """
-True Lazy Manager implementation that achieves patent-claimed performance.
+True Lazy Manager implementation that achieves optimized performance.
 
 This implementation defers ALL expensive operations until materialization is needed,
-providing the 29,833x performance improvement documented in the patents.
+providing significant performance improvements.
 """
 
 import hashlib
@@ -154,7 +154,7 @@ class LazyReference:
 
 class TrueLazyManager:
     """
-    True lazy manager that achieves patent-claimed performance improvements.
+    True lazy manager that achieves optimized performance improvements.
 
     This manager creates lightweight references and defers ALL expensive
     cryptographic operations until audit/materialization time.
@@ -218,7 +218,7 @@ class TrueLazyManager:
         """
         Create a lazy reference with minimal computational overhead.
 
-        This achieves the patent-claimed performance by doing almost no work upfront.
+        This achieves optimized performance by doing almost no work upfront.
 
         Args:
             item_id: Unique identifier for the data item
