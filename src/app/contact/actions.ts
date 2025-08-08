@@ -27,8 +27,12 @@ export async function handleContactForm(
   });
 
   if (!validatedFields.success) {
+    const fieldErrors = validatedFields.error.flatten().fieldErrors;
+    const firstErrorKey = Object.keys(fieldErrors)[0] as keyof typeof fieldErrors;
+    const firstErrorMessage = fieldErrors[firstErrorKey]?.[0];
+
     return {
-      message: validatedFields.error.flatten().fieldErrors[Object.keys(validatedFields.error.flatten().fieldErrors)[0]]?.[0] || 'Invalid data provided.',
+      message: firstErrorMessage || 'Invalid data provided.',
       status: 'error',
     };
   }
