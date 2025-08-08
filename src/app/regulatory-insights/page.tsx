@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
-import { Wand2, AlertTriangle, Lightbulb } from 'lucide-react';
+import { Wand2, AlertTriangle, Lightbulb, BadgeCheck, ShieldCheck } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function RegulatoryInsightToolPage() {
@@ -111,7 +111,7 @@ export default function RegulatoryInsightToolPage() {
             )}
 
             {error && (
-                <Card variant="destructive" className="bg-destructive/10 border-destructive">
+                <Card className="bg-destructive/10 border-destructive">
                     <CardHeader>
                         <CardTitle className="font-headline text-destructive flex items-center gap-2">
                            <AlertTriangle />
@@ -138,6 +138,25 @@ export default function RegulatoryInsightToolPage() {
                 </Card>
             )}
         </div>
+        
+        <Card className="mt-8 bg-muted">
+            <CardHeader>
+                <CardTitle className="font-headline flex items-center gap-2">
+                    <BadgeCheck />
+                    Compliant by Design
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                <p className="text-muted-foreground">Every analysis provided by our regulatory insights tool is backed by a system that aligns with:</p>
+                <ul className="mt-4 grid grid-cols-2 gap-2 text-sm">
+                    <li className="flex items-center"><ShieldCheck className="w-4 h-4 mr-2 text-primary" />EU AI Act (Title IV)</li>
+                    <li className="flex items-center"><ShieldCheck className="w-4 h-4 mr-2 text-primary" />NIST AI RMF</li>
+                    <li className="flex items-center"><ShieldCheck className="w-4 h-4 mr-2 text-primary" />HIPAA / SOC 2</li>
+                    <li className="flex items-center"><ShieldCheck className="w-4 h-4 mr-2 text-primary" />GDPR / CCPA</li>
+                </ul>
+                <p className="mt-4 text-sm text-muted-foreground">See how our cryptographic methods ensure verifiability without exposing underlying data.</p>
+            </CardContent>
+        </Card>
       </div>
     </div>
   );

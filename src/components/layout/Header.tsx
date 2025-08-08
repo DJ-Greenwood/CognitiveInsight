@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, Scale } from 'lucide-react';
+import { Menu, Scale, Shield } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -21,6 +21,7 @@ const navItems = [
   { label: 'Regulatory Insights', href: '/regulatory-insights' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Patent', href: '/patent', icon: Shield, highlighted: true },
 ];
 
 export function Header() {
@@ -37,16 +38,18 @@ export function Header() {
               CognitiveInsight.AI
             </span>
           </Link>
-          <nav className="flex items-center space-x-6 text-sm font-medium">
+          <nav className="flex items-center space-x-4 text-sm font-medium">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'transition-colors hover:text-primary',
-                  pathname === item.href ? 'text-primary' : 'text-muted-foreground'
+                  'transition-colors hover:text-primary flex items-center',
+                  pathname === item.href ? 'text-primary' : 'text-muted-foreground',
+                  item.highlighted && 'text-primary font-bold'
                 )}
               >
+                {item.icon && <item.icon className="mr-1 h-4 w-4" />}
                 {item.label}
               </Link>
             ))}
@@ -78,10 +81,12 @@ export function Header() {
                       href={item.href}
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={cn(
-                        'p-2 rounded-md transition-colors hover:text-primary',
-                        pathname === item.href ? 'bg-muted font-medium text-primary' : 'text-muted-foreground'
+                        'p-2 rounded-md transition-colors hover:text-primary flex items-center',
+                        pathname === item.href ? 'bg-muted font-medium text-primary' : 'text-muted-foreground',
+                        item.highlighted && 'text-primary font-bold bg-primary/10'
                       )}
                     >
+                      {item.icon && <item.icon className="mr-2 h-4 w-4" />}
                       {item.label}
                     </Link>
                   ))}

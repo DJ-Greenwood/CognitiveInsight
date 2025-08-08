@@ -89,12 +89,12 @@ export default function Home() {
         <section className="relative w-full py-24 md:py-32 lg:py-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary via-hero-gradient-middle to-black">
           <div className="container px-4 md:px-6 text-center text-primary-foreground">
             <div className="space-y-4">
+               <Badge variant="secondary" className="text-lg py-2 px-4 rounded-full">Patent-Powered AI Governance</Badge>
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                 Verifiable AI Governance for a Transparent Future
               </h1>
               <p className="mx-auto max-w-[700px] text-lg md:text-xl text-gray-300">
-                CognitiveInsight.AI integrates cryptographic trust and regulatory alignment into AI systems, ensuring
-                compliance and accountability from dataset to decision.
+                Backed by a filed non-provisional patent, CognitiveInsight.AI ensures cryptographically verifiable audit trails through its CIAF system. From model training to inference, every critical action is traceable, tamper-evident, and exportable — without compromising speed or privacy.
               </p>
             </div>
             <div className="mt-8 flex justify-center gap-4">
