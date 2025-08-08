@@ -93,8 +93,8 @@ const initialSteps: DemoStep[] = [
     details: [
       'Processing 50,000 transaction records...',
       'Creating provenance capsules for 3 data batches',
-      'Applying AES-GCM encryption to capsules',
-      'Lazy materialization enabled for efficiency'
+      'Applying enterprise-grade encryption to capsules',
+      'Optimized materialization for efficiency'
     ]
   },
   {
@@ -327,7 +327,7 @@ export default function InteractiveDemoPage() {
             Interactive CIAF Demo
           </h1>
           <p className="text-muted-foreground md:text-xl">
-            Step through an advanced audit workflow — in real time. Watch how CIAF defers encryption until you explicitly request an audit. This is our Lazy Capsule System in action — real-time, and regulatory-aligned.
+            Step through an advanced audit workflow in real time. See how CIAF provides cryptographic audit trails for AI systems with regulatory alignment and performance optimization.
           </p>
         </div>
 

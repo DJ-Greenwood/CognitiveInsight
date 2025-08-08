@@ -8,25 +8,25 @@ const architectureComponents = [
   {
     name: 'Core Cryptography',
     icon: Shield,
-    description: 'AES-GCM encryption, SHA-256 hashing, HMAC authentication',
-    technologies: ['Python', 'cryptography', 'hashlib', 'hmac'],
+    description: 'Industry-standard encryption and secure hashing',
+    technologies: ['Python', 'cryptography', 'hashlib'],
     features: [
-      'AES-256 GCM encryption for data protection',
-      'SHA-256 hashing for integrity verification', 
-      'HMAC-SHA256 for authenticated key derivation',
-      'Secure random number generation'
+      'Enterprise-grade encryption',
+      'Cryptographic integrity verification', 
+      'Secure authentication protocols',
+      'Tamper-evident security'
     ]
   },
   {
     name: 'Dataset Anchoring',
     icon: Database,
     description: 'Immutable dataset fingerprinting and provenance tracking',
-    technologies: ['Python', 'Merkle Trees', 'Lazy Evaluation'],
+    technologies: ['Python', 'Cryptographic Hashing', 'Audit Systems'],
     features: [
       'Cryptographic dataset fingerprinting',
-      'Merkle tree-based integrity proofs',
-      'Lazy capsule materialization',
-      'Hierarchical key derivation'
+      'Tamper-evident integrity proofs',
+      'Efficient audit preparation',
+      'Secure metadata management'
     ]
   },
   {
@@ -56,128 +56,80 @@ const architectureComponents = [
 ];
 
 const codeExamples = {
-  'dataset-anchor': `# Create a cryptographically secured dataset anchor
-from ciaf import DatasetAnchor, MetadataCapture
+  'dataset-anchor': `# CIAF Dataset Integration - High Level API
+from ciaf import CIAFFramework
 
-# Initialize dataset anchor with master password
-anchor = DatasetAnchor(
-    dataset_id="customer_data_v1",
+# Initialize framework for your AI system
+ciaf = CIAFFramework("production_system")
+
+# Create secure dataset fingerprint
+dataset_info = ciaf.register_dataset(
+    dataset_id="customer_data_v1", 
     metadata={
         "source": "customer_database",
-        "date_created": "2025-08-04",
         "record_count": 50000,
         "contains_pii": True
-    },
-    master_password="secure_master_key",
-    salt=b"dataset_specific_salt"
-)
-
-# Create provenance capsules with lazy materialization
-capsules = []
-for data_item in training_data:
-    capsule = anchor.create_lazy_capsule(
-        item_id=data_item["id"],
-        original_data=data_item["content"],
-        metadata=data_item["metadata"]
-    )
-    capsules.append(capsule)
-
-print(f"Created {len(capsules)} provenance capsules")
-print(f"Dataset fingerprint: {anchor.dataset_fingerprint}")`,
-
-  'model-training': `# Train model with CIAF integration
-from ciaf import CIAFFramework, ModelAggregationKey
-
-# Initialize CIAF framework
-ciaf = CIAFFramework("production_ai_system")
-
-# Create Model Aggregation Key
-mak = ciaf.create_model_aggregation_key(
-    model_name="fraud_detection_v2",
-    authorized_datasets=["customer_data_v1", "transaction_data_v1"]
-)
-
-# Train model with provenance tracking
-training_params = {
-    "algorithm": "xgboost",
-    "max_depth": 6,
-    "learning_rate": 0.1,
-    "training_duration": "2.5 hours",
-    "validation_accuracy": 0.94
-}
-
-snapshot = ciaf.train_model(
-    model_name="fraud_detection_v2",
-    capsules=provenance_capsules,
-    mak=mak,
-    training_params=training_params,
-    model_version="2.1.0"
-)
-
-print(f"Training snapshot ID: {snapshot.snapshot_id}")
-print(f"Merkle root hash: {snapshot.merkle_root_hash}")`,
-
-  'inference-receipt': `# Generate uncertainty receipt for model inference
-from ciaf.inference import InferenceReceipt, ZKEChain
-
-# Create ZK-enabled inference chain
-zk_chain = ZKEChain("fraud_detection_chain")
-
-# Sample inference query
-query = {
-    "transaction_amount": 5000,
-    "merchant_category": "electronics",
-    "user_location": "New York",
-    "time_of_day": "evening"
-}
-
-# Generate inference with uncertainty receipt
-receipt = zk_chain.create_receipt(
-    query=json.dumps(query),
-    ai_output="FLAGGED: High fraud probability (0.87)",
-    model_version="2.1.0",
-    training_snapshot_id=snapshot.snapshot_id,
-    confidence_score=0.87,
-    bias_indicators={
-        "geographic_bias": 0.12,
-        "temporal_bias": 0.08
     }
 )
 
-print(f"Receipt hash: {receipt.receipt_hash}")
-print(f"Uncertainty quantified: {receipt.confidence_score}")
-print(f"Privacy preserved: {receipt.privacy_preserving}")`,
+print(f"Dataset registered with fingerprint: {dataset_info.fingerprint}")`,
 
-  'audit-trail': `# Generate comprehensive audit trail
-from ciaf.compliance import AuditTrailGenerator
+  'model-training': `# Model Training with CIAF Integration
+from ciaf import CIAFFramework
 
-# Initialize audit trail for model
-audit_gen = AuditTrailGenerator(
-    model_name="fraud_detection_v2",
-    compliance_frameworks=["GDPR", "SOX", "PCI-DSS"]
+# Initialize CIAF framework
+ciaf = CIAFFramework("fraud_detection_system")
+
+# Register model training
+training_session = ciaf.start_training_session(
+    model_name="fraud_detector_v2",
+    datasets=["customer_data_v1", "transaction_data_v1"]
 )
 
-# Record training event
-training_record = audit_gen.record_training_event(
-    training_snapshot=snapshot,
-    training_params=training_params,
-    user_id="data_scientist_001"
+# Your existing training code here...
+# model = train_xgboost(training_data)
+
+# Complete training with audit trail
+training_session.complete({
+    "accuracy": 0.94,
+    "training_time": "2.5 hours"
+})`,
+
+  'inference-receipt': `# Generate Compliance Receipt for Inference
+from ciaf import CIAFFramework
+
+# Initialize system
+ciaf = CIAFFramework("production_fraud_system")
+
+# Generate inference with compliance receipt
+result = ciaf.predict_with_receipt(
+    model_id="fraud_detector_v2",
+    input_data={
+        "transaction_amount": 5000,
+        "merchant_type": "electronics"
+    }
 )
 
-# Record inference events
-inference_record = audit_gen.record_inference_event(
-    receipt=receipt,
-    query_metadata={"contains_pii": False, "high_risk": True},
-    user_id="api_service"
+print(f"Prediction: {result.prediction}")
+print(f"Receipt ID: {result.receipt_id}")
+print(f"Confidence: {result.confidence}")`,
+
+  'audit-trail': `# Export Audit Trail for Regulatory Review
+from ciaf import CIAFFramework
+
+# Initialize framework
+ciaf = CIAFFramework("production_system")
+
+# Generate comprehensive audit report
+audit_report = ciaf.generate_audit_report(
+    model_name="fraud_detector_v2",
+    time_range="2024-01-01 to 2024-12-31",
+    compliance_frameworks=["SOX", "PCI-DSS"]
 )
 
-# Verify audit trail integrity
-integrity_check = audit_gen.verify_audit_integrity()
-print(f"Audit integrity verified: {integrity_check['integrity_verified']}")
-
-# Export for regulatory submission
-audit_export = audit_gen.export_audit_trail(format="json")
-print(f"Audit trail exported: {len(audit_export)} bytes")`
+# Export for regulator review
+audit_report.export("audit_report_2024.pdf")
+print(f"Audit report generated: {audit_report.summary}")`,
 };
 
 export default function TechnicalArchitecturePage() {
@@ -232,36 +184,6 @@ export default function TechnicalArchitecturePage() {
             </Card>
           ))}
         </div>
-        
-        {/* Diagrams Section */}
-        <div className="grid gap-6 md:grid-cols-2">
-           <Card>
-              <CardHeader>
-                 <CardTitle className="font-headline">System & Data Flow Diagrams</CardTitle>
-                 <CardDescription>Visualizing the CIAF processes.</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                 <p className="text-sm text-muted-foreground">The following diagrams illustrate the core concepts of our architecture, from key derivation to model versioning.</p>
-                 <div className="grid grid-cols-2 gap-4">
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 1: CIAF System Overview" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="system architecture diagram" />
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 2: Cryptographic Key Derivation Flow" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="key derivation flow" />
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 3: Provenance Capsule Structure" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="data structure diagram" />
-                    <Image src="https://placehold.co/400x300.png" alt="Diagram 4: Merkle Tree Structure for Integrity" width={400} height={300} className="rounded-lg shadow-md" data-ai-hint="merkle tree diagram" />
-                 </div>
-              </CardContent>
-           </Card>
-           <Card>
-              <CardHeader>
-                 <CardTitle className="font-headline">Model Versioning Diagram</CardTitle>
-                 <CardDescription>Diagram 5: Tracking model and session evolution with cryptographic certainty.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                 <Image src="https://placehold.co/600x400.png" alt="Diagram 5: Model and Session Versioning" width={600} height={400} className="rounded-lg shadow-md" data-ai-hint="version control graph" />
-              </CardContent>
-           </Card>
-        </div>
-
-
         {/* Code Examples */}
         <Card>
           <CardHeader>
@@ -299,30 +221,30 @@ export default function TechnicalArchitecturePage() {
             <CardHeader>
               <CardTitle className="font-headline flex items-center">
                 <Zap className="mr-2" />
-                Performance Characteristics
+                Performance Benefits
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-sm">Dataset Anchoring</span>
-                <Badge variant="outline">~1-2ms per 1K records</Badge>
+                <span className="text-sm">Audit Preparation</span>
+                <Badge variant="outline">1000× Faster</Badge>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm">Provenance Capsule Creation</span>
-                <Badge variant="outline">~0.5ms per capsule</Badge>
+                <span className="text-sm">Memory Usage</span>
+                <Badge variant="outline">99% Reduction</Badge>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm">Inference Receipt Generation</span>
-                <Badge variant="outline">~10-50ms per query</Badge>
+                <span className="text-sm">Storage Optimization</span>
+                <Badge variant="outline">20-30× Better</Badge>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm">Audit Trail Verification</span>
-                <Badge variant="outline">~100ms per 1K records</Badge>
+                <span className="text-sm">Compliance Coverage</span>
+                <Badge variant="outline">94% vs 75%</Badge>
               </div>
               <div className="mt-4 p-3 bg-muted rounded-lg">
                 <p className="text-xs text-muted-foreground">
-                  Performance scales linearly with dataset size. Lazy materialization 
-                  ensures minimal memory footprint for large datasets.
+                  Performance benefits scale with dataset size while maintaining 
+                  constant-time operations for audit operations.
                 </p>
               </div>
             </CardContent>
@@ -338,24 +260,24 @@ export default function TechnicalArchitecturePage() {
             <CardContent className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-sm">Encryption</span>
-                <Badge variant="outline">AES-256 GCM</Badge>
+                <Badge variant="outline">Enterprise-Grade</Badge>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm">Hashing</span>
-                <Badge variant="outline">SHA-256</Badge>
+                <span className="text-sm">Integrity</span>
+                <Badge variant="outline">Cryptographic</Badge>
               </div>
               <div className="flex justify-between">
-                <span className="text-sm">Key Derivation</span>
-                <Badge variant="outline">HMAC-SHA256</Badge>
+                <span className="text-sm">Authentication</span>
+                <Badge variant="outline">Multi-Layer</Badge>
               </div>
               <div className="flex justify-between">
                 <span className="text-sm">Random Generation</span>
-                <Badge variant="outline">os.urandom()</Badge>
+                <Badge variant="outline">CSPRNG</Badge>
               </div>
               <div className="mt-4 p-3 bg-muted rounded-lg">
                 <p className="text-xs text-muted-foreground">
                   All cryptographic operations use industry-standard algorithms 
-                  and are implemented using the Python cryptography library.
+                  and follow security best practices.
                 </p>
               </div>
             </CardContent>

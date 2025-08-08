@@ -253,7 +253,7 @@ export default function Home() {
                 <div className="space-y-4">
                     <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">Privacy Is Non-Negotiable.</h2>
                     <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Every compliance receipt is sealed with AES-GCM encryption and linked through a zero-knowledge architecture. Your data never leaves your control. We build verifiable, privacy-first AI systems that empower regulators and practitioners to trust the intelligence shaping our world.
+                        Every compliance receipt is sealed with enterprise-grade encryption and linked through a zero-knowledge architecture. Your data never leaves your control. We build verifiable, privacy-first AI systems that empower regulators and practitioners to trust the intelligence shaping our world.
                     </p>
                     <ul className="grid gap-2 py-4">
                         {trustFeatures.map((feature, index) => (
