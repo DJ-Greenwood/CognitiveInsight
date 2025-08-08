@@ -236,23 +236,6 @@ export default function Home() {
                   </p>
                 </CardContent>
               </Card>
-
-              <Card className="relative border-dashed border-2 border-muted-foreground/30">
-                <Badge variant="secondary" className="absolute top-4 right-4">
-                  Q2 2026
-                </Badge>
-                <CardHeader>
-                  <div className="mx-auto w-fit rounded-md bg-purple-500/20 p-3">
-                    <Receipt className="h-8 w-8 text-purple-600" />
-                  </div>
-                  <CardTitle className="font-headline mt-4">Blockchain Integration</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Immutable audit trails with blockchain-based timestamping and verification.
-                  </p>
-                </CardContent>
-              </Card>
             </div>
             <div className="mt-12 text-center">
               <Button variant="outline" asChild>
