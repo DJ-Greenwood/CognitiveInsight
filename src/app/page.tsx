@@ -3,7 +3,11 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock, AlertTriangle, Zap, Shield, FileText, Activity, Factory, Truck, Heart, DollarSign, Users, Trophy, AlertCircle, Layers, TrendingUp, ShieldCheck, LinkIcon, EyeOff } from 'lucide-react';
+import {
+  CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock,
+  AlertTriangle, Zap, Shield, FileText, Activity, Factory, Truck, Heart, DollarSign,
+  Users, Trophy, AlertCircle, Layers, TrendingUp, ShieldCheck, LinkIcon, EyeOff, Sparkles
+} from 'lucide-react';
 
 const challengePoints = [
   {
@@ -123,7 +127,6 @@ const partnershipAreas = [
   { text: 'Advisors — compliance, AI governance, and cryptography expertise.' },
 ];
 
-
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -156,9 +159,21 @@ export default function Home() {
                 Turn Confusion to Clarity
               </h1>
               <p className="mx-auto max-w-[800px] text-lg md:text-xl text-gray-200">
-                From excessive data streams to unknown AI black-box structures, our patent-pending audit technology delivers verifiable compliance — on demand.
+                From excessive data streams to unknown AI black-box structures, my patent-pending audit technology delivers verifiable compliance — on demand.
               </p>
             </div>
+
+            {/* Human-led, AI-assisted disclosure */}
+            <div className="mt-6 mx-auto max-w-[800px]">
+              <div className="inline-flex items-start gap-2 text-left rounded-md border border-white/20 bg-white/5 px-3 py-2">
+                <Sparkles className="h-4 w-4 mt-0.5" aria-hidden />
+                <p className="text-xs md:text-sm text-gray-100">
+                  <strong>Human-led, AI-assisted:</strong> I design and build Insight™. I use AI tools to accelerate research, drafting, and prototypes using my historical project notes for context.
+                  All final decisions and outputs are mine.
+                </p>
+              </div>
+            </div>
+
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" asChild variant="secondary">
                 <Link href="/contact" aria-label="Request Early Access">Request Early Access</Link>
@@ -169,7 +184,7 @@ export default function Home() {
                 variant="outline"
                 className="bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
               >
-                <Link href="/contact" aria-label="Partner With Us">Partner With Us</Link>
+                <Link href="/contact" aria-label="Partner With Me">Partner With Me</Link>
               </Button>
             </div>
           </div>
@@ -218,17 +233,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Our Solution */}
+        {/* The Solution */}
         <section aria-labelledby="solution-title" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center text-center">
-              <Badge variant="default" className="mb-4 bg-green-600 hover:bg-green-700" aria-label="Our Solution">
+              <Badge variant="default" className="mb-4 bg-green-600 hover:bg-green-700" aria-label="The Solution">
                 <CheckCircle className="w-4 h-4 mr-2" aria-hidden />
-                Our Solution
+                The Solution
               </Badge>
               <h2 id="solution-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Insight™</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
-                Insight is our cryptographic audit framework that brings <strong>selective, on-demand proof generation</strong> to compliance.
+                Insight is my cryptographic audit framework that enables <strong>governance and verification</strong> through cryptographic integrity and on-demand audit trails.
               </p>
             </div>
 
@@ -255,12 +270,9 @@ export default function Home() {
               <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 rounded-lg p-8 max-w-4xl mx-auto">
                 <h3 className="text-2xl font-bold mb-2 font-headline">The Result</h3>
                 <p className="text-lg text-muted-foreground">
-                  Instant, verifiable audits with up to <strong className="text-green-700 dark:text-green-400">90% lower storage costs</strong> and
-                  <strong className="text-blue-700 dark:text-blue-400"> 1000× faster data registration</strong><sup>1</sup>.
-                </p>
-                <p className="mt-3 text-xs text-muted-foreground">
-                  <sup>1</sup> Based on internal benchmarks. See{' '}
-                  <Link href="/benchmarks" className="underline underline-offset-2">methodology</Link>.
+                  Instant, verifiable audits — delivering up to <strong className="text-green-700 dark:text-green-400">90% lower storage costs</strong> and
+                  <strong className="text-blue-700 dark:text-blue-400"> 1,000× faster data registration</strong> based on internal benchmarks.
+                  I’m actively seeking partners to validate and extend these results in real-world regulated environments.
                 </p>
               </div>
             </div>
@@ -275,7 +287,7 @@ export default function Home() {
                 Target Industries
               </div>
               <h2 id="industries-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline mt-3">
-                Industries We’re Targeting
+                Industries I’m Targeting
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
                 Insight™ adapts to high-stakes sectors where auditability and compliance are mission-critical.
@@ -354,9 +366,9 @@ export default function Home() {
                 <Users className="w-4 h-4 mr-2" aria-hidden />
                 Partnership Opportunities
               </Badge>
-              <h2 id="partners-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">We’re Looking for Partners & Support</h2>
+              <h2 id="partners-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">I’m Looking for Partners & Support</h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
-                We are in early development and seeking:
+                I am in early development and seeking:
               </p>
             </div>
 
@@ -373,14 +385,14 @@ export default function Home() {
 
             <div className="mt-12 text-center">
               <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
-                If you share our vision for faster, leaner, and more transparent compliance, <strong>let’s build it together.</strong>
+                If you share this vision for faster, leaner, and more transparent compliance, <strong>let’s build it together.</strong>
               </p>
               <div className="flex items-center justify-center gap-3">
                 <Button size="lg" asChild>
                   <Link href="/contact" aria-label="Join Early Access">Join Early Access</Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
-                  <Link href="/contact" aria-label="Contact Us">Contact Us</Link>
+                  <Link href="/contact" aria-label="Contact Me">Contact Me</Link>
                 </Button>
               </div>
             </div>
@@ -405,7 +417,7 @@ export default function Home() {
                   className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
                   asChild
                 >
-                  <Link href="/contact" aria-label="Get in touch">Contact Us</Link>
+                  <Link href="/contact" aria-label="Get in touch">Contact Me</Link>
                 </Button>
               </div>
             </div>
@@ -415,4 +427,3 @@ export default function Home() {
     </div>
   );
 }
-

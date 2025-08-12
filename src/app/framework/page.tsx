@@ -105,7 +105,7 @@ export default function FrameworkPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Secure, on-demand cryptographic keys that can be regenerated when needed — no key storage, no overhead. Proof you can verify anytime, without managing complex key systems.
+                Secure, on-demand cryptographic keys for verification without persistent storage. Enable proof validation anytime, without managing complex key infrastructure.
               </p>
             </CardContent>
           </Card>
@@ -243,7 +243,7 @@ export default function FrameworkPage() {
                       SEC Rule 17a-4 – Retention of records in non-rewriteable, non-erasable format
                     </td>
                     <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
-                      Blockchain anchoring & tamper-evident proof storage meet WORM-equivalent requirements.
+                      Immutable proof storage architecture designed to meet non-rewriteable, non-erasable format requirements.
                     </td>
                   </tr>
                   <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
