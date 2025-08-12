@@ -18,6 +18,31 @@ export default function DemoPage() {
         </div>
       </div>
 
+      {/* Simulation Disclaimer */}
+      <div className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6 mb-8">
+        <div className="text-center">
+          <h3 className="text-xl font-bold text-blue-900 dark:text-blue-100 mb-3">
+            🔬 Interactive Simulations of Insight™ Framework
+          </h3>
+          <p className="text-blue-800 dark:text-blue-200 mb-4 max-w-4xl mx-auto">
+            These demos are <strong>interactive simulations</strong> that demonstrate the core concepts and workflow of the Insight™ framework. 
+            All data is generated for demonstration purposes only — no real cryptographic operations, actual blockchain transactions, 
+            or live data processing occurs.
+          </p>
+          <div className="grid gap-4 md:grid-cols-3 text-sm text-blue-700 dark:text-blue-300">
+            <div className="bg-white/50 dark:bg-blue-900/30 p-3 rounded">
+              <strong>Simulated Components:</strong> Data generation, proof capsules, verification reports
+            </div>
+            <div className="bg-white/50 dark:bg-blue-900/30 p-3 rounded">
+              <strong>Educational Purpose:</strong> Illustrate workflow concepts and user experience
+            </div>
+            <div className="bg-white/50 dark:bg-blue-900/30 p-3 rounded">
+              <strong>Real Implementation:</strong> Available through early access program
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="text-center mb-16">
         <Badge variant="secondary" className="mb-4 text-lg py-2 px-4 rounded-full">

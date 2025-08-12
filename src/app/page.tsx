@@ -1,19 +1,40 @@
 import Link from 'next/link';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock, AlertTriangle, Zap, Shield, FileText, Activity, Factory, Truck, Heart, DollarSign, Users, Trophy, AlertCircle } from 'lucide-react';
+import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock, AlertTriangle, Zap, Shield, FileText, Activity, Factory, Truck, Heart, DollarSign, Users, Trophy, AlertCircle, Layers, TrendingUp, ShieldCheck, LinkIcon, EyeOff } from 'lucide-react';
 
 const challengePoints = [
   {
     icon: Database,
     title: 'Excessive Audit Overhead',
-    description: '“Log everything” bloats storage and compute, slowing investigations and inflating costs.',
+    description: '"Log everything" approaches bloat storage and compute, slow investigations, and inflate compliance costs.',
   },
   {
     icon: AlertTriangle,
     title: 'Opaque AI Decisions',
-    description: 'Outputs are hard to trace or verify, creating risk in audits and incident response.',
+    description: 'Outputs from AI and automated systems are hard to trace or verify, increasing risk in audits and incident response.',
+  },
+  {
+    icon: Layers,
+    title: 'Fragmented Compliance Data',
+    description: 'Audit records often span disconnected systems, making full-chain verification slow, complex, and error-prone.',
+  },
+  {
+    icon: Lock,
+    title: 'Data Privacy Exposure',
+    description: 'Traditional audits require sharing raw data with third parties, creating unnecessary regulatory and security risks.',
+  },
+  {
+    icon: Clock,
+    title: 'Slow Regulatory Response',
+    description: 'Compiling months or years of evidence under tight deadlines strains resources and increases the risk of non-compliance.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Scaling Limitations',
+    description: 'High-volume environments can generate millions of events daily, overwhelming traditional storage and retrieval methods.',
   }
 ];
 
@@ -166,7 +187,7 @@ export default function Home() {
                 The Problem with Modern AI Systems
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
-                AI and modern data systems generate overwhelming volumes of logs and outputs — often without structure or clear lineage. In regulated industries, this creates two critical issues:
+                AI and modern data systems generate overwhelming volumes of logs and outputs — often without structure or clear lineage. In regulated industries, this creates critical issues:
               </p>
             </div>
 

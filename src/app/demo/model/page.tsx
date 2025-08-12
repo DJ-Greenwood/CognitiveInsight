@@ -230,6 +230,23 @@ export default function ModelDemoPage() {
         </div>
       </div>
 
+      {/* Simulation Notice */}
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200 dark:border-green-800 rounded-lg p-4 mb-8">
+        <div className="flex items-start gap-3">
+          <div className="text-2xl">🎯</div>
+          <div>
+            <h3 className="font-semibold text-green-900 dark:text-green-100 mb-2">
+              Interactive Simulation: AI Model Compliance Proof Generation
+            </h3>
+            <p className="text-sm text-green-800 dark:text-green-200">
+              This demo simulates the Insight™ framework's AI model auditing capabilities using synthetic data and a simple logistic regression model. 
+              All model training, inference results, and proof capsule generation are <strong>simulated demonstrations</strong> — 
+              no actual AI models or sensitive data are processed.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="text-center mb-12">
         <Badge variant="secondary" className="mb-4">

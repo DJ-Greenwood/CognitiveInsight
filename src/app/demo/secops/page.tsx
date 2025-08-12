@@ -336,6 +336,23 @@ export default function SecOpsDemo() {
         </div>
       </div>
 
+      {/* Simulation Notice */}
+      <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-950/20 dark:to-pink-950/20 border border-red-200 dark:border-red-800 rounded-lg p-4 mb-8">
+        <div className="flex items-start gap-3">
+          <div className="text-2xl">🛡️</div>
+          <div>
+            <h3 className="font-semibold text-red-900 dark:text-red-100 mb-2">
+              Interactive Simulation: SIEM Log Processing & Incident Capsule Generation
+            </h3>
+            <p className="text-sm text-red-800 dark:text-red-200">
+              This demo simulates the Insight™ framework's cybersecurity log processing capabilities. All security logs are 
+              <strong> synthetically generated</strong> and the incident capsule creation process is a <strong>simulated demonstration</strong> — 
+              no actual security data, real SIEM systems, or live threat intelligence is processed.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="text-center mb-12">
         <Badge variant="secondary" className="mb-4">

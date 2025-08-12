@@ -105,8 +105,7 @@ export default function FrameworkPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Deterministic, non-persistent cryptographic keys for reproducible, verifiable records without storing sensitive keys. 
-                Enable verification without key management overhead.
+                Secure, on-demand cryptographic keys that can be regenerated when needed — no key storage, no overhead. Proof you can verify anytime, without managing complex key systems.
               </p>
             </CardContent>
           </Card>
@@ -183,6 +182,146 @@ export default function FrameworkPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Regulatory Alignment Map */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-4xl font-bold mb-6">
+              Insight™ Regulatory Alignment Map
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+              No proprietary methods disclosed — capability-based mapping showing how Insight™ addresses key regulatory requirements across industries.
+            </p>
+          </div>
+          
+          <div className="overflow-x-auto">
+            <div className="min-w-full bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700 shadow-lg">
+              <table className="w-full">
+                <thead className="bg-slate-50 dark:bg-slate-800">
+                  <tr>
+                    <th className="text-left py-4 px-6 font-semibold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">
+                      Regulation / Standard
+                    </th>
+                    <th className="text-left py-4 px-6 font-semibold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">
+                      Relevant Requirement
+                    </th>
+                    <th className="text-left py-4 px-6 font-semibold text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-700">
+                      Insight™ Capability That Addresses It
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-blue-600 dark:text-blue-400">HIPAA (Healthcare)</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      Ensure integrity and confidentiality of patient data (45 CFR §164.312)
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Cryptographic proof capsules & selective proof generation ensure data integrity while avoiding exposure of PHI.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-green-600 dark:text-green-400">GDPR (EU)</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      Article 5(1)(f) – Integrity & confidentiality
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Immutable, verifiable audit proofs without storing sensitive raw data.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-purple-600 dark:text-purple-400">SEC / FINRA (Finance)</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      SEC Rule 17a-4 – Retention of records in non-rewriteable, non-erasable format
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Blockchain anchoring & tamper-evident proof storage meet WORM-equivalent requirements.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-indigo-600 dark:text-indigo-400">SOX (Sarbanes–Oxley)</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      Section 404 – Internal controls for financial reporting
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Independent, cryptographically verifiable evidence for financial event logs.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-red-600 dark:text-red-400">CISA Cybersecurity Regulations</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      Incident logging & response integrity
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Selective high-fidelity logging with independent verification for incident reports.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-orange-600 dark:text-orange-400">NIST AI RMF</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      Govern – Transparency & accountability
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Explainable proof trails for AI model inferences without revealing sensitive internals.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-teal-600 dark:text-teal-400">EU AI Act</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      High-risk AI – Record keeping & traceability
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Immutable, verifiable model decision records on demand.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-cyan-600 dark:text-cyan-400">ISO 27001</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      A.12.4 – Event logging
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Configurable selective logging with verifiable proof records.
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-4 px-6">
+                      <span className="font-medium text-pink-600 dark:text-pink-400">PCI-DSS</span>
+                    </td>
+                    <td className="py-4 px-6 text-slate-600 dark:text-slate-300">
+                      10.2 – Audit trails for all access to cardholder data
+                    </td>
+                    <td className="py-4 px-6 text-slate-700 dark:text-slate-200">
+                      Cryptographic audit capsules ensure verifiable logs without exposing PII.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-sm text-muted-foreground max-w-2xl mx-auto">
+              This mapping demonstrates conceptual alignment with regulatory requirements. Specific implementation details 
+              and compliance validation processes are available through our professional services team.
+            </p>
           </div>
         </div>
 

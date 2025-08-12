@@ -347,6 +347,23 @@ export default function BlockchainAnchoringDemo() {
         </div>
       </div>
 
+      {/* Simulation Notice */}
+      <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-950/20 dark:to-indigo-950/20 border border-purple-200 dark:border-purple-800 rounded-lg p-4 mb-8">
+        <div className="flex items-start gap-3">
+          <div className="text-2xl">⛓️</div>
+          <div>
+            <h3 className="font-semibold text-purple-900 dark:text-purple-100 mb-2">
+              Interactive Simulation: Blockchain Verification & Immutable Audit Trails
+            </h3>
+            <p className="text-sm text-purple-800 dark:text-purple-200">
+              This demo simulates the Insight™ framework's blockchain verification capabilities. All blockchain transactions are 
+              <strong> synthetically generated</strong> and the immutable audit trail creation process is a <strong>simulated demonstration</strong> — 
+              no actual cryptocurrency, live blockchain networks, or real distributed ledger operations are involved.
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Header */}
       <div className="text-center mb-12">
         <Badge variant="secondary" className="mb-4">
