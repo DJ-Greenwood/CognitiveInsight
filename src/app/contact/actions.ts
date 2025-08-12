@@ -7,6 +7,7 @@ const contactFormSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
   organization: z.string().optional(),
+  interest: z.string().optional(),
   message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
 });
 
@@ -24,6 +25,7 @@ export async function handleContactForm(
     name: formData.get('name'),
     email: formData.get('email'),
     organization: formData.get('organization'),
+    interest: formData.get('interest'),
     message: formData.get('message'),
   });
 
@@ -52,17 +54,18 @@ export async function handleContactForm(
     const adminEmailOptions = {
       from: process.env.GMAIL_USER,
       to: process.env.GMAIL_USER, // Send to yourself
-      subject: `New Contact Form Submission from ${validatedFields.data.name}`,
+      subject: `New Insight™ Early Access Request from ${validatedFields.data.name}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-            New Contact Form Submission
+            New Early Access Request - Insight™
           </h2>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
             <p><strong>Name:</strong> ${validatedFields.data.name}</p>
             <p><strong>Email:</strong> <a href="mailto:${validatedFields.data.email}">${validatedFields.data.email}</a></p>
             <p><strong>Organization:</strong> ${validatedFields.data.organization || 'Not specified'}</p>
+            <p><strong>Primary Interest:</strong> ${validatedFields.data.interest ? validatedFields.data.interest.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : 'Not specified'}</p>
           </div>
           
           <div style="margin: 20px 0;">
@@ -74,7 +77,7 @@ export async function handleContactForm(
           
           <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
           <p style="color: #666; font-size: 12px;">
-            This message was sent from the CognitiveInsight.AI contact form.
+            This message was sent from the Insight™ Early Access contact form.
           </p>
         </div>
       `,
@@ -84,32 +87,41 @@ export async function handleContactForm(
     const userEmailOptions = {
       from: process.env.GMAIL_USER,
       to: validatedFields.data.email,
-      subject: 'Thank you for contacting CognitiveInsight.AI',
+      subject: 'Welcome to the Insight™ Early Access Program',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #333; border-bottom: 2px solid #007bff; padding-bottom: 10px;">
-            Thank You for Your Interest!
+            Welcome to Insight™ Early Access!
           </h2>
           
           <p>Dear ${validatedFields.data.name},</p>
           
-          <p>Thank you for reaching out to CognitiveInsight.AI. We have received your message and will get back to you within 24 hours.</p>
+          <p>Thank you for your interest in Insight™, our patent-pending cryptographic audit framework. We're excited to have you join our early access program!</p>
           
           <div style="background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin: 20px 0;">
-            <h3 style="color: #333; margin-top: 0;">Your Message:</h3>
+            <h3 style="color: #333; margin-top: 0;">Your Interest: ${validatedFields.data.interest ? validatedFields.data.interest.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase()) : 'General Interest'}</h3>
             <p style="font-style: italic; color: #666;">
               "${validatedFields.data.message}"
             </p>
           </div>
           
-          <p>We're excited to discuss how our Cryptographically Integrated AI Framework (CIAF) can help your organization achieve verifiable AI governance.</p>
+          <p>Our team will review your request and get back to you within 24-48 hours with next steps. In the meantime, you can learn more about our approach to turning confusion to clarity in AI compliance on our website.</p>
+          
+          <div style="background-color: #e3f2fd; padding: 15px; border-radius: 5px; margin: 20px 0;">
+            <h4 style="margin-top: 0; color: #1976d2;">What to Expect Next:</h4>
+            <ul style="margin: 10px 0;">
+              <li>Technical discovery call within 48 hours</li>
+              <li>Custom demonstration of Insight™ capabilities</li>
+              <li>Discussion of pilot partnership opportunities</li>
+            </ul>
+          </div>
           
           <p>Best regards,<br>
-          <strong>The CognitiveInsight.AI Team</strong></p>
+          <strong>The CognitiveInsight AI Team</strong></p>
           
           <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
           <p style="color: #666; font-size: 12px;">
-            CognitiveInsight.AI - Verifiable AI Governance for a Transparent Future<br>
+            Insight™ - Turn Confusion to Clarity | Patent-Pending Cryptographic Audit Framework<br>
             If you need immediate assistance, please reply to this email.
           </p>
         </div>
@@ -123,7 +135,7 @@ export async function handleContactForm(
     ]);
 
     return {
-      message: 'Thank you for your message! We will get back to you within 24 hours.',
+      message: 'Welcome to Insight™ Early Access! We will contact you within 24-48 hours with next steps.',
       status: 'success',
     };
   } catch (error) {

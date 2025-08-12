@@ -26,7 +26,7 @@ export function Header() {
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Scale className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
-              CognitiveInsight.AI
+              Insight™
             </span>
           </Link>
           <nav className="flex items-center space-x-4 text-sm font-medium">
@@ -61,7 +61,7 @@ export function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   <Scale className="mr-2 h-6 w-6 text-primary" />
-                  <span className="font-bold font-headline">CognitiveInsight.AI</span>
+                  <span className="font-bold font-headline">Insight™</span>
                 </Link>
                 <div className="flex flex-col space-y-3">
                   {navItems.map((item) => (
@@ -84,12 +84,12 @@ export function Header() {
           
           <Link href="/" className="flex items-center space-x-2 md:hidden">
             <Scale className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline">CognitiveInsight.AI</span>
+            <span className="font-bold font-headline">Insight™</span>
           </Link>
 
           <nav className="flex items-center">
             <Button asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact">Request Early Access</Link>
             </Button>
           </nav>
         </div>

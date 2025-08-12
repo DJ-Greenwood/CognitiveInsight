@@ -1,27 +1,27 @@
-import { Scale } from 'lucide-react';
+import { Scale, FileText } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="bg-muted text-muted-foreground">
-      <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
+      <div className="container flex flex-col items-center justify-between gap-4 py-10 md:h-32 md:flex-row md:py-0">
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <Scale className="hidden h-6 w-6 md:block text-primary" />
-          <p className="text-center text-sm leading-loose md:text-left">
-            Built by{' '}
-            <a
-              href="https://github.com/Denzil-Greenwood"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Denzil J. Greenwood
-            </a>
-            . Verifiable AI Governance for a Transparent Future.
+          <div className="text-center md:text-left">
+            <p className="text-sm leading-loose">
+              <strong>Insight™</strong> - Turn Confusion to Clarity
+            </p>
+            <p className="text-xs text-muted-foreground/80 flex items-center justify-center md:justify-start mt-1">
+              <FileText className="h-3 w-3 mr-1" />
+              Patent-pending cryptographic audit framework
+            </p>
+          </div>
+        </div>
+        <div className="text-center text-sm md:text-right">
+          <p>© {new Date().getFullYear()} CognitiveInsight AI. All Rights Reserved.</p>
+          <p className="text-xs text-muted-foreground/80 mt-1">
+            Patent applications filed under U.S. Patent Law
           </p>
         </div>
-        <p className="text-center text-sm md:text-left">
-          © {new Date().getFullYear()} CognitiveInsight.AI. All Rights Reserved.
-        </p>
       </div>
     </footer>
   );

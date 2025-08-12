@@ -1,102 +1,320 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileText, Database, KeyRound, Receipt, BookCheck } from 'lucide-react';
-
-const frameworkSections = [
-  {
-    value: 'item-1',
-    title: 'Dataset Anchors',
-    icon: Database,
-    description: 'Establish cryptographic provenance for your training data. Create immutable fingerprints that verify data integrity and origin throughout the AI lifecycle, providing a trusted foundation for all downstream AI operations.',
-  },
-  {
-    value: 'item-2',
-    title: 'Model Anchor Keys (MAKs)',
-    icon: KeyRound,
-    description: 'Secure model authorization and versioning. Each AI model receives a unique cryptographic identity that links it to validated training data and operational parameters, ensuring only authorized models are deployed in production.',
-  },
-  {
-    value: 'item-3',
-    title: 'Compliance Receipts',
-    icon: Receipt,
-    description: 'Generate privacy-preserving audit evidence. Produce tamper-evident summaries of model decisions, confidence levels, and compliance status without exposing sensitive data or proprietary model details.',
-  },
-  {
-    value: 'item-4',
-    title: 'Audit Trail Integration',
-    icon: BookCheck,
-    description: 'Maintain comprehensive governance records. Automatically log all system changes, model updates, and compliance actions in an immutable audit trail designed for regulatory review and transparency.',
-  },
-];
+import { Badge } from '@/components/ui/badge';
+import { 
+  Database, 
+  KeyRound, 
+  Receipt, 
+  BookCheck, 
+  Shield, 
+  Zap, 
+  CheckCircle, 
+  FileText, 
+  Download,
+  Monitor,
+  Users,
+  Play,
+  AlertTriangle
+} from 'lucide-react';
+import Link from 'next/link';
 
 export default function FrameworkPage() {
   return (
-    <div className="container py-12 md:py-24">
-      <div className="mx-auto max-w-4xl">
-        <div className="text-center space-y-4">
-          <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">
-            Cryptographically Integrated AI Framework (CIAF)
-          </h1>
-          <p className="text-muted-foreground md:text-xl">
-            Enterprise-grade AI governance through cryptographic integrity and automated audit trails.
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+        
+        {/* Abstract Background Visualization */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-1/3 w-48 h-48 bg-cyan-500/10 rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="relative container py-24 md:py-32">
+          <div className="mx-auto max-w-4xl text-center text-white">
+            <Badge variant="secondary" className="mb-6 bg-white/10 text-white border-white/20">
+              <Shield className="w-4 h-4 mr-2" />
+              Patent-Pending Technology
+            </Badge>
+            
+            <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-6">
+              Insight™ Framework
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-blue-100 mb-4 max-w-3xl mx-auto">
+              Governance and verification through cryptographic integrity and on-demand audit trails.
+            </p>
+            
+            <p className="text-lg text-blue-200/80 mb-12 max-w-2xl mx-auto">
+              Patent-pending technology for verifiable trust and streamlined compliance.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90" asChild>
+                <Link href="/contact?interest=technical-overview">
+                  <FileText className="w-5 h-5 mr-2" />
+                  Request Technical Overview
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                <Link href="/contact?interest=executive-summary">
+                  <Download className="w-5 h-5 mr-2" />
+                  Download Executive Summary
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container py-20">
+        {/* Feature Highlights Section */}
+        <div className="text-center mb-16">
+          <h2 className="font-headline text-3xl md:text-4xl font-bold mb-4">
+            Core Framework Components
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Four foundational elements that enable verifiable governance without compromising performance or privacy.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
-              {frameworkSections.map((section) => (
-                <AccordionItem key={section.value} value={section.value}>
-                  <AccordionTrigger className="text-lg font-headline hover:no-underline">
-                    <div className="flex items-center">
-                      <section.icon className="mr-3 h-6 w-6 text-primary" />
-                      {section.title}
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground pl-12">
-                    {section.description}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center">
+                <Database className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+              </div>
+              <CardTitle className="text-xl">Data Anchors</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Immutable cryptographic fingerprints that verify the integrity and origin of records across their lifecycle. 
+                Establish trusted foundations for all downstream operations.
+              </p>
+            </CardContent>
+          </Card>
 
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="font-headline flex items-center">
-                  <FileText className="mr-2" />
-                  White Paper - Patent Pending
-                </CardTitle>
-                <CardDescription>
-                  Technical documentation temporarily unavailable due to patent filing.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="mb-4 text-sm text-muted-foreground">
-                  Our comprehensive CIAF white paper is currently restricted while patent applications are under review. Contact us for executive summaries and high-level technical overviews.
+          <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 dark:bg-purple-900/20 rounded-2xl flex items-center justify-center">
+                <KeyRound className="w-8 h-8 text-purple-600 dark:text-purple-400" />
+              </div>
+              <CardTitle className="text-xl">Anchor Keys</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Deterministic, non-persistent cryptographic keys for reproducible, verifiable records without storing sensitive keys. 
+                Enable verification without key management overhead.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <div className="w-16 h-16 mx-auto mb-4 bg-green-100 dark:bg-green-900/20 rounded-2xl flex items-center justify-center">
+                <Receipt className="w-8 h-8 text-green-600 dark:text-green-400" />
+              </div>
+              <CardTitle className="text-xl">Compliance Receipts</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Digitally signed records that provide independent proof of actions, decisions, or transactions. 
+                Generate audit evidence without exposing sensitive data.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow">
+            <CardHeader>
+              <div className="w-16 h-16 mx-auto mb-4 bg-amber-100 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center">
+                <BookCheck className="w-8 h-8 text-amber-600 dark:text-amber-400" />
+              </div>
+              <CardTitle className="text-xl">Audit Trail Integration</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Seamless incorporation into existing workflows, providing verifiable history without performance bottlenecks. 
+                Maintain governance without disrupting operations.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Value Proposition Strip */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 mb-20">
+          <div className="absolute inset-0 bg-black/10"></div>
+          <div className="relative py-16 px-8">
+            <div className="text-center mb-12">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold text-white mb-4">
+                Why Insight™ Matters
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8 text-center text-white">
+              <div>
+                <div className="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-2xl flex items-center justify-center">
+                  <Shield className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Trust</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  Independently verifiable integrity for any record or process. Build confidence through cryptographic proof.
                 </p>
-                <Button className="w-full" variant="outline" asChild>
-                  <a href="/contact">Request Technical Information</a>
-                </Button>
-              </CardContent>
-            </Card>
+              </div>
+              
+              <div>
+                <div className="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-2xl flex items-center justify-center">
+                  <Zap className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Efficiency</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  On-demand proofs reduce storage and processing by 90%+. Scale verification without infrastructure costs.
+                </p>
+              </div>
+              
+              <div>
+                <div className="w-16 h-16 mx-auto mb-6 bg-white/10 rounded-2xl flex items-center justify-center">
+                  <CheckCircle className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold mb-3">Compliance</h3>
+                <p className="text-blue-100 leading-relaxed">
+                  Easily meet verification and reporting requirements across multiple regulatory frameworks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <div className="text-center">
-               <div className="bg-muted/30 rounded-lg shadow-lg border-2 border-dashed border-muted-foreground/20 p-12 max-w-lg mx-auto">
-                 <div className="flex flex-col items-center justify-center h-64">
-                   <div className="text-4xl mb-3">📊</div>
-                   <h3 className="text-xl font-semibold text-muted-foreground mb-1">Coming Soon</h3>
-                   <p className="text-sm text-muted-foreground text-center">Compliance Dashboard Mockup</p>
-                 </div>
-               </div>
-              <p className="text-sm text-muted-foreground mt-2">A preview of CIAF&apos;s integrated audit trail visualization.</p>
+        {/* Patent Disclaimer */}
+        <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-950/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-8 mb-20">
+          <div className="flex items-start gap-4">
+            <div className="flex-shrink-0">
+              <AlertTriangle className="w-8 h-8 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <h3 className="text-xl font-bold text-amber-900 dark:text-amber-200 mb-3">
+                Patent-Pending Notice
+              </h3>
+              <p className="text-amber-800 dark:text-amber-300 leading-relaxed">
+                Insight™ Framework is protected under active U.S. patent applications. Certain technical details are 
+                intentionally omitted from this site to preserve intellectual property. Contact us for high-level 
+                summaries or executive briefings.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* White Paper Access */}
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
+          <div>
+            <h2 className="font-headline text-3xl font-bold mb-4">
+              White Paper (Patent Pending)
+            </h2>
+            <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+              Full technical documentation is temporarily unavailable while patents are under review. 
+              Our comprehensive technical documentation provides detailed insights into the Insight™ Framework's 
+              architecture, implementation patterns, and integration strategies.
+            </p>
+            <p className="text-muted-foreground mb-8">
+              Contact us for an executive summary that covers the framework's core concepts, 
+              business benefits, and deployment considerations without revealing proprietary implementation details.
+            </p>
+            <Button size="lg" asChild>
+              <Link href="/contact?interest=white-paper">
+                <FileText className="w-5 h-5 mr-2" />
+                Request Technical Information
+              </Link>
+            </Button>
+          </div>
+          <div className="relative">
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 border-2 border-dashed border-slate-300 dark:border-slate-600">
+              <div className="text-center">
+                <div className="w-20 h-20 mx-auto mb-6 bg-slate-200 dark:bg-slate-700 rounded-2xl flex items-center justify-center">
+                  <FileText className="w-10 h-10 text-slate-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-slate-600 dark:text-slate-300 mb-2">
+                  Technical Documentation
+                </h3>
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  Available upon request during patent review
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Coming Soon - Dashboard Mockup */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-3 mb-6">
+            <Monitor className="w-8 h-8 text-primary" />
+            <h2 className="font-headline text-3xl font-bold">Coming Soon – Dashboard Mockup</h2>
+          </div>
+          <p className="text-muted-foreground text-lg mb-12 max-w-3xl mx-auto">
+            Preview of the Insight™ Dashboard — a visual interface for monitoring verification results, 
+            proof capsule statuses, and compliance metrics. Real-time visibility into your organization's 
+            cryptographic audit trails and governance status.
+          </p>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-16 border-2 border-dashed border-slate-300 dark:border-slate-600 min-h-96 flex flex-col items-center justify-center">
+              <div className="text-6xl mb-6">📊</div>
+              <h3 className="text-2xl font-semibold text-slate-600 dark:text-slate-300 mb-3">
+                Interactive Dashboard Preview
+              </h3>
+              <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-md text-center">
+                Comprehensive monitoring and management interface for Insight™ Framework deployments
+              </p>
+              <div className="grid grid-cols-3 gap-6 text-sm text-slate-400">
+                <div className="text-center">
+                  <div className="w-12 h-12 mx-auto mb-2 bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6" />
+                  </div>
+                  <span>Verification Status</span>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 mx-auto mb-2 bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+                    <Receipt className="w-6 h-6" />
+                  </div>
+                  <span>Proof Capsules</span>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 mx-auto mb-2 bg-slate-200 dark:bg-slate-700 rounded-lg flex items-center justify-center">
+                    <BookCheck className="w-6 h-6" />
+                  </div>
+                  <span>Compliance Metrics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Call-to-Action Footer */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 text-white">
+          <div className="absolute inset-0 bg-dots-pattern opacity-20"></div>
+          
+          <div className="relative py-20 px-8 text-center">
+            <h2 className="font-headline text-4xl font-bold mb-6">
+              Bring Insight™ to Your Organization
+            </h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+              Transform your compliance and governance challenges into competitive advantages with 
+              patent-pending cryptographic audit technology.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90" asChild>
+                <Link href="/demo">
+                  <Play className="w-5 h-5 mr-2" />
+                  Request a Demo
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                <Link href="/contact?interest=partnership">
+                  <Users className="w-5 h-5 mr-2" />
+                  Partner With Us
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

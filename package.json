@@ -1,7 +1,8 @@
 {
-  "name": "nextn",
+  "name": "insight-audit-framework",
   "version": "0.1.0",
   "private": true,
+  "description": "Insight™ - Patent-pending cryptographic audit framework turning confusion to clarity in AI compliance",
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
     "genkit:dev": "genkit start -- tsx src/ai/dev.ts",

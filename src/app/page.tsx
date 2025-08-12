@@ -2,282 +2,396 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock } from 'lucide-react';
+import { CheckCircle, Database, Lock, Receipt, KeyRound, PlayCircle, Building, Code, Clock, AlertTriangle, Zap, Shield, FileText, Activity, Factory, Truck, Heart, DollarSign, Users, Trophy, AlertCircle } from 'lucide-react';
 
-const trustSeals = [
+const challengePoints = [
   {
     icon: Database,
-    title: 'Provenance Capsules',
-    description: 'Cryptographically sealed records verifying data origin and integrity.',
-    link: '/framework'
+    title: 'Excessive Audit Overhead',
+    description: '“Log everything” bloats storage and compute, slowing investigations and inflating costs.',
   },
   {
-    icon: KeyRound,
-    title: 'Model Anchor Keys',
-    description: 'Unique identifiers that link AI models to their authorized datasets and use cases.',
-    link: '/framework'
-  },
-  {
-    icon: Receipt,
-    title: 'Uncertainty Receipts',
-    description: 'Tamper-evident proof of a model&apos;s performance, limitations, and compliance checks.',
-    link: '/framework'
-  },
-];
-
-const showcaseFeatures = [
-  {
-    icon: PlayCircle,
-    title: 'Interactive Framework',
-    description: 'Explore CIAF components and their cryptographic integration',
-    href: '/framework',
-    color: 'bg-blue-500',
-    status: 'available'
-  },
-  {
-    icon: Building,
-    title: 'About CognitiveInsight',
-    description: 'Learn about our mission and approach to AI governance',
-    href: '/about',
-    color: 'bg-green-500',
-    status: 'available'
-  },
-  {
-    icon: Code,
-    title: 'Contact & Support',
-    description: 'Get in touch with our team for technical discussions',
-    href: '/contact',
-    color: 'bg-purple-500',
-    status: 'available'
+    icon: AlertTriangle,
+    title: 'Opaque AI Decisions',
+    description: 'Outputs are hard to trace or verify, creating risk in audits and incident response.',
   }
 ];
 
-const trustFeatures = [
-    { text: 'Client-side encryption ensures your data never leaves your control.' },
-    { text: 'Tamper-evident audit trails provide immutable proof of compliance.' },
-    { text: 'Regulator-ready receipts simplify and accelerate governance reviews.' },
-    { text: 'Zero-knowledge compliance verification (Coming Q4 2025)', comingSoon: true },
-    { text: 'Multi-party computation for federated learning (Coming Q1 2026)', comingSoon: true },
-]
+const solutionFeatures = [
+  {
+    icon: Zap,
+    title: 'On-Demand Proof Generation',
+    description: 'Produce cryptographic audit evidence exactly when required, optimizing cost and latency.',
+  },
+  {
+    icon: Receipt,
+    title: 'Integrity Verification Anchoring',
+    description: 'Prove data authenticity at scale with tamper-resistance designed for millions of events.',
+  },
+  {
+    icon: Activity,
+    title: 'Adaptive Compliance Response',
+    description: 'Automatically shift from lightweight monitoring to detailed logging when triggered.',
+  },
+  {
+    icon: Shield,
+    title: 'Privacy-Preserving Verification',
+    description: 'Enable verification without exposing sensitive underlying information.',
+  }
+];
+
+const industries = [
+  {
+    icon: Heart,
+    title: 'Healthcare',
+    description: 'HIPAA-aligned auditability without duplicating every raw record.',
+  },
+  {
+    icon: DollarSign,
+    title: 'Finance',
+    description: 'SEC/FINRA-ready proofs without constant high-volume logging.',
+  },
+  {
+    icon: Shield,
+    title: 'Defense',
+    description: 'Selective, real-time auditability in sensitive AI/ML pipelines.',
+  },
+  {
+    icon: Building,
+    title: 'AI Governance',
+    description: 'Explainability and trust signals for black-box models.',
+  },
+  {
+    icon: Activity,
+    title: 'IoT & Edge Devices',
+    description: 'Lightweight integrity proofs for sensors and field systems.',
+  },
+  {
+    icon: Factory,
+    title: 'Energy & Critical Infrastructure',
+    description: 'Compliance and event integrity for CISA-regulated environments.',
+  }
+];
+
+const benefits = [
+  {
+    icon: Database,
+    title: 'Storage & Cost Savings',
+    description: '10×–100× reduction in audit storage footprint.*',
+  },
+  {
+    icon: Zap,
+    title: 'Performance Gains',
+    description: 'Registration up to 1000× faster than eager logging.*',
+  },
+  {
+    icon: CheckCircle,
+    title: 'Regulatory Confidence',
+    description: 'Designed to meet or exceed tamper-evidence expectations.',
+  },
+  {
+    icon: Trophy,
+    title: 'Scalability',
+    description: 'Architecture proven to scale to 100M+ events in testing.',
+  }
+];
+
+const partnershipAreas = [
+  { text: 'Funding — grants, angel investment, or strategic partnerships.' },
+  { text: 'Pilot partners — run Insight™ in a live, regulated environment.' },
+  { text: 'Advisors — compliance, AI governance, and cryptography expertise.' },
+];
+
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Coming Soon Banner */}
+      {/* Patent Notice Banner */}
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-2 px-4">
         <div className="container mx-auto text-center">
-          <p className="text-sm font-medium">
-            <Clock className="inline w-4 h-4 mr-2" />
-            🚀 New Features Coming Soon: Zero-Knowledge Compliance & Federated CIAF
-            <Link href="/contact" className="ml-2 underline hover:no-underline">
-              Join Early Access →
-            </Link>
+          <p className="text-sm font-medium flex items-center justify-center gap-2">
+            <FileText className="w-4 h-4" aria-hidden />
+            <span>Insight™ is patent-pending under U.S. Utility Patent Applications</span>
           </p>
         </div>
       </div>
-      
+
       <main className="flex-1">
-        <section className="relative w-full py-24 md:py-32 lg:py-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary via-hero-gradient-middle to-black">
+        {/* Hero Section */}
+        <section
+          aria-labelledby="hero-title"
+          className="relative w-full py-24 md:py-32 lg:py-40 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary via-hero-gradient-middle to-black"
+        >
           <div className="container px-4 md:px-6 text-center text-primary-foreground">
-            <div className="space-y-4">
-               <Badge variant="secondary" className="text-lg py-2 px-4 rounded-full">Advanced AI Governance</Badge>
-              <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-                Verifiable AI Governance for a Transparent Future
+            <div className="space-y-6">
+              <Badge
+                variant="secondary"
+                className="text-lg py-2 px-4 rounded-full"
+                aria-label="Patent-Pending and In Early Development"
+              >
+                Patent-Pending | In Early Development
+              </Badge>
+              <h1 id="hero-title" className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                Turn Confusion to Clarity
               </h1>
-              <p className="mx-auto max-w-[700px] text-lg md:text-xl text-gray-300">
-                CognitiveInsight.AI ensures cryptographically verifiable audit trails through its CIAF system. From model training to inference, every critical action is traceable, tamper-evident, and exportable — without compromising speed or privacy.
+              <p className="mx-auto max-w-[800px] text-lg md:text-xl text-gray-200">
+                From excessive data streams to unknown AI black-box structures, our patent-pending audit technology delivers verifiable compliance — on demand.
               </p>
             </div>
-            <div className="mt-8 flex justify-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" asChild variant="secondary">
-                <Link href="/framework">Explore Framework</Link>
+                <Link href="/contact" aria-label="Request Early Access">Request Early Access</Link>
               </Button>
-              <Button size="lg" asChild variant="outline" className="bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
-                <Link href="/contact">Contact Us</Link>
+              <Button
+                size="lg"
+                asChild
+                variant="outline"
+                className="bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
+              >
+                <Link href="/contact" aria-label="Partner With Us">Partner With Us</Link>
               </Button>
             </div>
           </div>
         </section>
 
-        {/* Showcase Features */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+        {/* The Challenge */}
+        <section aria-labelledby="challenge-title" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm text-muted-foreground font-headline">Explore CIAF</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">See What CIAF Can Do</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Experience the power of cryptographically integrated AI through our comprehensive showcases and demonstrations.
+            <div className="flex flex-col items-center text-center">
+              <Badge variant="destructive" className="mb-4" aria-label="The Challenge">
+                <AlertCircle className="w-4 h-4 mr-2" aria-hidden />
+                The Challenge
+              </Badge>
+              <h2 id="challenge-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">
+                The Problem with Modern AI Systems
+              </h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
+                AI and modern data systems generate overwhelming volumes of logs and outputs — often without structure or clear lineage. In regulated industries, this creates two critical issues:
+              </p>
+            </div>
+
+            <div className="mx-auto grid max-w-4xl items-start gap-8 sm:grid-cols-2 md:gap-12 mt-12">
+              {challengePoints.map((challenge) => (
+                <Card
+                  key={challenge.title}
+                  className="h-full text-center border-destructive/20 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-destructive"
+                >
+                  <CardHeader>
+                    <div className="mx-auto w-fit rounded-md bg-destructive/10 p-3" aria-hidden>
+                      <challenge.icon className="h-8 w-8 text-destructive" />
+                    </div>
+                    <CardTitle className="font-headline mt-4 text-destructive">{challenge.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{challenge.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <p className="max-w-[700px] mx-auto text-muted-foreground md:text-lg">
+                The result is heightened <strong>compliance risk</strong>, <strong>costly investigations</strong>, and <strong>erosion of trust</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Solution */}
+        <section aria-labelledby="solution-title" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center text-center">
+              <Badge variant="default" className="mb-4 bg-green-600 hover:bg-green-700" aria-label="Our Solution">
+                <CheckCircle className="w-4 h-4 mr-2" aria-hidden />
+                Our Solution
+              </Badge>
+              <h2 id="solution-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Insight™</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
+                Insight is our cryptographic audit framework that brings <strong>selective, on-demand proof generation</strong> to compliance.
+              </p>
+            </div>
+
+            <div className="mx-auto grid max-w-5xl items-start gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-12">
+              {solutionFeatures.map((feature) => (
+                <Card
+                  key={feature.title}
+                  className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-green-600"
+                >
+                  <CardHeader>
+                    <div className="mx-auto w-fit rounded-md bg-green-600 p-3" aria-hidden>
+                      <feature.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <CardTitle className="font-headline mt-4 text-base lg:text-lg">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center">
+              <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 rounded-lg p-8 max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold mb-2 font-headline">The Result</h3>
+                <p className="text-lg text-muted-foreground">
+                  Instant, verifiable audits with up to <strong className="text-green-700 dark:text-green-400">90% lower storage costs</strong> and
+                  <strong className="text-blue-700 dark:text-blue-400"> 1000× faster data registration</strong><sup>1</sup>.
+                </p>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  <sup>1</sup> Based on internal benchmarks. See{' '}
+                  <Link href="/benchmarks" className="underline underline-offset-2">methodology</Link>.
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-4xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-12">
-              {showcaseFeatures.map((feature) => (
-                <Link key={feature.title} href={feature.href}>
-                  <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 cursor-pointer relative">
-                    {feature.status === 'coming-soon' && (
-                      <Badge variant="secondary" className="absolute top-2 right-2 z-10">
-                        <Clock className="w-3 h-3 mr-1" />
-                        Coming Soon
-                      </Badge>
-                    )}
-                    <CardHeader>
-                      <div className={`mx-auto w-fit rounded-md ${feature.color} p-3`}>
-                        <feature.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <CardTitle className="font-headline mt-4">{feature.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
+          </div>
+        </section>
+
+        {/* Industries */}
+        <section aria-labelledby="industries-title" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center text-center">
+              <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm text-muted-foreground font-headline">
+                Target Industries
+              </div>
+              <h2 id="industries-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline mt-3">
+                Industries We’re Targeting
+              </h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
+                Insight™ adapts to high-stakes sectors where auditability and compliance are mission-critical.
+              </p>
+            </div>
+
+            <div className="mx-auto grid max-w-6xl items-start gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-12">
+              {industries.map((industry) => (
+                <Card
+                  key={industry.title}
+                  className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary relative"
+                >
+                  <Badge variant="secondary" className="absolute top-2 right-2 z-10 text-xs">
+                    <Clock className="w-3 h-3 mr-1" />
+                    Under Development
+                  </Badge>
+                  <CardHeader>
+                    <div className="mx-auto w-fit rounded-md bg-primary p-3" aria-hidden>
+                      <industry.icon className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <CardTitle className="font-headline mt-4 text-lg">{industry.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm">{industry.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        {/* Benefits */}
+        <section aria-labelledby="benefits-title" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm text-muted-foreground font-headline">Core Components</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">The Pillars of Trustified AI</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Our Cryptographically Integrated AI Framework (CIAF) is built on three core pillars that provide end-to-end verifiability for your AI systems.
-                </p>
-              </div>
+            <div className="flex flex-col items-center text-center">
+              <Badge variant="outline" className="mb-4" aria-label="Projected Benefits">
+                <Trophy className="w-4 h-4 mr-2" aria-hidden />
+                Projected Benefits
+              </Badge>
+              <h2 id="benefits-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Why Choose Insight™</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
+                A new compliance architecture with measurable gains across cost, performance, and trust.
+              </p>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:max-w-none mt-12">
-              {trustSeals.map((seal) => (
-                <Link key={seal.title} href={seal.link}>
-                  <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 cursor-pointer">
-                    <CardHeader>
-                      <div className="mx-auto w-fit rounded-md bg-primary p-3">
-                        <seal.icon className="h-8 w-8 text-primary-foreground" />
-                      </div>
-                      <CardTitle className="font-headline mt-4">{seal.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{seal.description}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
+
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 lg:grid-cols-4 mt-12">
+              {benefits.map((benefit) => (
+                <Card
+                  key={benefit.title}
+                  className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 border-primary/20 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-primary"
+                >
+                  <CardHeader>
+                    <div className="mx-auto w-fit rounded-md bg-primary p-3" aria-hidden>
+                      <benefit.icon className="h-6 w-6 text-primary-foreground" />
+                    </div>
+                    <CardTitle className="font-headline mt-4">{benefit.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{benefit.description}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
-            <div className="mt-12 text-center">
-              <div className="mx-auto rounded-lg shadow-2xl bg-muted/30 border-2 border-dashed border-muted-foreground/20 p-16 max-w-4xl">
-                <div className="flex flex-col items-center justify-center h-96">
-                  <div className="text-6xl mb-4">🚧</div>
-                  <h3 className="text-2xl font-semibold text-muted-foreground mb-2">Coming Soon</h3>
-                  <p className="text-muted-foreground">CIAF ML Pipeline Diagram</p>
-                </div>
-              </div>
-            </div>
+
+            <p className="mt-6 text-center text-xs text-muted-foreground">
+              * Estimates based on internal tests; actual results will vary by workload and configuration.
+            </p>
           </div>
         </section>
 
-        {/* Coming Soon Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
+        {/* Partners */}
+        <section aria-labelledby="partners-title" className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <Badge variant="outline" className="mb-4">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Roadmap 2025-2026
-                </Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">What&apos;s Coming Next</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We&apos;re continuously expanding CIAF with cutting-edge features to meet the evolving needs of AI governance and compliance.
-                </p>
+            <div className="flex flex-col items-center text-center">
+              <Badge variant="outline" className="mb-4" aria-label="Partnership Opportunities">
+                <Users className="w-4 h-4 mr-2" aria-hidden />
+                Partnership Opportunities
+              </Badge>
+              <h2 id="partners-title" className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">We’re Looking for Partners & Support</h2>
+              <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed mt-4">
+                We are in early development and seeking:
+              </p>
+            </div>
+
+            <div className="mx-auto max-w-4xl mt-12">
+              <div className="grid gap-4 md:gap-6">
+                {partnershipAreas.map((area, index) => (
+                  <div key={index} className="flex items-center p-6 bg-background rounded-lg border">
+                    <CheckCircle className="mr-4 h-6 w-6 text-green-600 flex-shrink-0" aria-hidden />
+                    <span className="text-lg">{area.text}</span>
+                  </div>
+                ))}
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 lg:max-w-none mt-12">
-              <Card className="relative border-dashed border-2 border-muted-foreground/30">
-                <Badge variant="secondary" className="absolute top-4 right-4">
-                  Q4 2025
-                </Badge>
-                <CardHeader>
-                  <div className="mx-auto w-fit rounded-md bg-blue-500/20 p-3">
-                    <Lock className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <CardTitle className="font-headline mt-4">Zero-Knowledge Compliance</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Verify compliance without revealing sensitive model parameters or training data details.
-                  </p>
-                </CardContent>
-              </Card>
 
-              <Card className="relative border-dashed border-2 border-muted-foreground/30">
-                <Badge variant="secondary" className="absolute top-4 right-4">
-                  Q1 2026
-                </Badge>
-                <CardHeader>
-                  <div className="mx-auto w-fit rounded-md bg-green-500/20 p-3">
-                    <Database className="h-8 w-8 text-green-600" />
-                  </div>
-                  <CardTitle className="font-headline mt-4">Federated CIAF</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Multi-party computation enabling collaborative AI while maintaining data sovereignty.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
             <div className="mt-12 text-center">
-              <Button variant="outline" asChild>
-                <Link href="/contact">
-                  <Clock className="w-4 h-4 mr-2" />
-                  Get Early Access
-                </Link>
-              </Button>
+              <p className="text-xl text-muted-foreground mb-6 max-w-2xl mx-auto">
+                If you share our vision for faster, leaner, and more transparent compliance, <strong>let’s build it together.</strong>
+              </p>
+              <div className="flex items-center justify-center gap-3">
+                <Button size="lg" asChild>
+                  <Link href="/contact" aria-label="Join Early Access">Join Early Access</Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild>
+                  <Link href="/contact" aria-label="Contact Us">Contact Us</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
-        
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-            <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-                <div className="space-y-4">
-                    <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">Privacy Is Non-Negotiable.</h2>
-                    <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Every compliance receipt is sealed with enterprise-grade encryption and linked through a zero-knowledge architecture. Your data never leaves your control. We build verifiable, privacy-first AI systems that empower regulators and practitioners to trust the intelligence shaping our world.
-                    </p>
-                    <ul className="grid gap-2 py-4">
-                        {trustFeatures.map((feature, index) => (
-                             <li key={index} className="flex items-center">
-                                {feature.comingSoon ? (
-                                  <Clock className="mr-2 h-5 w-5 text-muted-foreground" />
-                                ) : (
-                                  <CheckCircle className="mr-2 h-5 w-5 text-accent" />
-                                )}
-                                <span className={feature.comingSoon ? 'text-muted-foreground' : ''}>
-                                  {feature.text}
-                                </span>
-                                {feature.comingSoon && (
-                                  <Badge variant="outline" className="ml-2">
-                                    Coming Soon
-                                  </Badge>
-                                )}
-                            </li>
-                        ))}
-                    </ul>
-                    <Button asChild>
-                        <Link href="/contact">Contact Us for More Information</Link>
-                    </Button>
-                </div>
-                <div className="rounded-xl shadow-2xl bg-muted/30 border-2 border-dashed border-muted-foreground/20 p-12 max-w-lg mx-auto">
-                  <div className="flex flex-col items-center justify-center h-64">
-                    <div className="text-4xl mb-3">🔒</div>
-                    <h3 className="text-xl font-semibold text-muted-foreground mb-1">Coming Soon</h3>
-                    <p className="text-sm text-muted-foreground text-center">Trust & Security Illustration</p>
-                  </div>
-                </div>
+
+        {/* CTA */}
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-6 text-center">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">Join the Early Access Program</h2>
+              <p className="max-w-[700px] text-lg md:text-xl text-primary-foreground/90">
+                Be the first to experience Insight™ and shape the future of compliance.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" variant="secondary" asChild>
+                  <Link href="/contact" aria-label="Request Access">Request Access</Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                  asChild
+                >
+                  <Link href="/contact" aria-label="Get in touch">Contact Us</Link>
+                </Button>
+              </div>
             </div>
+          </div>
         </section>
       </main>
     </div>
   );
 }
+

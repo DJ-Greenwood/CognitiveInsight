@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
 import { Loader2 } from 'lucide-react';
 
@@ -45,9 +46,9 @@ export default function ContactPage() {
   return (
     <div className="container py-12 md:py-24">
       <div className="mx-auto max-w-2xl text-center">
-        <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">Contact Us</h1>
+        <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl">Join the Early Access Program</h1>
         <p className="mt-4 text-muted-foreground md:text-xl">
-          Have a question or want to see a demo? We&apos;d love to hear from you.
+          Be the first to experience Insight™ and shape the future of compliance. We're looking for pilot partners, advisors, and strategic investors.
         </p>
       </div>
 
@@ -66,8 +67,24 @@ export default function ContactPage() {
             <Input id="organization" name="organization" placeholder="Your Organization (Optional)" />
           </div>
           <div className="space-y-2">
+            <Label htmlFor="interest">I'm interested in</Label>
+            <Select name="interest">
+              <SelectTrigger>
+                <SelectValue placeholder="Select your primary interest" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="early-access">Early Access Program</SelectItem>
+                <SelectItem value="pilot-partnership">Pilot Partnership</SelectItem>
+                <SelectItem value="funding">Funding & Investment</SelectItem>
+                <SelectItem value="advisory">Advisory Role</SelectItem>
+                <SelectItem value="strategic-partnership">Strategic Partnership</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="space-y-2">
             <Label htmlFor="message">Message</Label>
-            <Textarea id="message" name="message" placeholder="How can we help you?" required />
+            <Textarea id="message" name="message" placeholder="Tell us about your interest in Insight™ and how you'd like to collaborate" required />
           </div>
           <SubmitButton />
         </form>

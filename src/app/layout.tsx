@@ -6,8 +6,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'CognitiveInsight.AI: Trustified AI',
-  description: 'Verifiable AI Governance for a Transparent Future. We integrate cryptographic trust and regulatory alignment into AI systems, ensuring compliance and accountability from dataset to decision.',
+  title: 'Insight™ - Turn Confusion to Clarity',
+  description: 'Patent-pending cryptographic audit framework delivering provable AI compliance on demand. From excessive data streams to opaque black-box models, Insight™ provides instant, verifiable audits with 90% lower storage costs.',
 };
 
 export default function RootLayout({
