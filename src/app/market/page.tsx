@@ -25,51 +25,51 @@ import {
 const industryTAM = [
   {
     icon: Heart,
-    title: 'Healthcare',
-    tam: '$45.6B',
-    growth: '12.3% CAGR',
-    description: 'Healthcare data analytics and compliance market size by 2030',
-    keyDrivers: ['HIPAA compliance requirements', 'Patient data integrity mandates', 'Electronic health record auditing']
+    title: 'Healthcare Compliance Technology',
+    tam: '$6.5B',
+    growth: '~11% CAGR',
+    description: 'Healthcare compliance technology market by 2030 (from ~$3.5B in 2024)',
+    keyDrivers: ['HIPAA enforcement intensification', 'EHR data integrity requirements', 'Automated audit tool adoption']
   },
   {
     icon: DollarSign,
-    title: 'Financial Services',
-    tam: '$127.8B',
-    growth: '9.8% CAGR',
-    description: 'Financial technology compliance and risk management market',
-    keyDrivers: ['SEC Rule 17a-4 compliance', 'SOX audit requirements', 'Anti-money laundering (AML)']
+    title: 'Financial Services RegTech',
+    tam: '$45B',
+    growth: '~18% CAGR',
+    description: 'Financial services regulatory technology market by 2030',
+    keyDrivers: ['Escalating AML/KYC requirements', 'SOX compliance automation', 'Real-time reporting mandates']
   },
   {
     icon: Shield,
-    title: 'Defense & Government',
-    tam: '$18.2B',
-    growth: '7.5% CAGR',
-    description: 'Government cybersecurity and compliance solutions market',
-    keyDrivers: ['CISA cybersecurity frameworks', 'Zero trust architecture', 'Classified system auditing']
+    title: 'Government & Defense Cybersecurity',
+    tam: '$138B',
+    growth: '~13% CAGR',
+    description: 'Government and defense cybersecurity market by 2030',
+    keyDrivers: ['Zero-trust architecture mandates', 'State-sponsored threat response', 'Critical system protection']
   },
   {
     icon: Building,
-    title: 'AI Governance',
-    tam: '$2.1B',
-    growth: '42.3% CAGR',
-    description: 'AI ethics, explainability, and governance solutions market',
-    keyDrivers: ['EU AI Act compliance', 'NIST AI Risk Management Framework', 'Model transparency requirements']
+    title: 'AI Governance & Model Risk Management',
+    tam: '$1.4B',
+    growth: '>30% CAGR',
+    description: 'Rapidly emerging AI governance market by 2030',
+    keyDrivers: ['EU AI Act compliance requirements', 'NIST AI Risk Management Framework', 'Model transparency mandates']
   },
   {
     icon: Factory,
-    title: 'Critical Infrastructure',
-    tam: '$86.4B',
-    growth: '15.2% CAGR',
-    description: 'Industrial cybersecurity and operational technology market',
-    keyDrivers: ['NERC-CIP standards', 'ICS/SCADA security', 'Critical infrastructure protection']
+    title: 'Critical Infrastructure OT Security',
+    tam: '$60B',
+    growth: '~18% CAGR',
+    description: 'Operational technology security market by 2030',
+    keyDrivers: ['NERC-CIP compliance standards', 'ICS/SCADA system protection', 'Industrial control security']
   },
   {
     icon: Activity,
-    title: 'IoT & Edge Computing',
-    tam: '$34.9B',
-    growth: '18.7% CAGR',
-    description: 'IoT security and edge device management market',
-    keyDrivers: ['Device integrity verification', 'Edge computing security', 'Industrial IoT compliance']
+    title: 'IoT & Edge Device Security',
+    tam: '$142B',
+    growth: '~27% CAGR',
+    description: 'IoT and edge device security market by 2030',
+    keyDrivers: ['Connected device proliferation', 'New security regulations', 'Edge computing compliance']
   }
 ];
 
@@ -201,15 +201,31 @@ export default function MarketPage() {
         <div className="text-center mb-16">
           <Badge variant="secondary" className="mb-4 text-lg py-2 px-4 rounded-full">
             <TrendingUp className="w-4 h-4 mr-2" />
-            Market Opportunity
+            Market Opportunity (Conservative Outlook)
           </Badge>
           <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-6">
-            A $315B+ Market Opportunity
+            A $250B+ Global Market
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto">
-            The compliance technology market is experiencing unprecedented growth as regulatory requirements intensify across industries. 
-            Insight™ addresses critical gaps in audit efficiency, data integrity, and regulatory reporting.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-4xl mx-auto mb-8">
+            The global compliance technology and security market for regulated industries is projected to exceed $250 billion by 2030, 
+            based on independent market research from multiple reputable sources.
           </p>
+          <div className="bg-muted/50 rounded-lg p-6 max-w-3xl mx-auto">
+            <div className="text-center mb-4">
+              <p className="text-sm text-muted-foreground mb-4">
+                <strong>Market Data Sources:</strong> Market analysis conducted using ChatGPT 5 Deep Research, 
+                synthesizing data from Grand View Research, Mordor Intelligence, and MarketsandMarkets (2023–2025), 
+                normalized to reflect only relevant compliance, audit, and security spend — excluding unrelated IT, 
+                analytics, or general-purpose software markets.
+              </p>
+              <Button variant="outline" size="sm" asChild>
+                <Link href="/Data_Source_Transparency_for_Insight™_Market_Sizing.pdf" target="_blank" className="inline-flex items-center gap-2">
+                  <FileText className="h-4 w-4" />
+                  Download Full Research Report
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
 
         {/* Total Addressable Market */}
@@ -253,11 +269,85 @@ export default function MarketPage() {
           <div className="mt-8 text-center">
             <div className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border border-green-200 dark:border-green-800 rounded-lg p-6">
               <h3 className="text-2xl font-bold mb-2 text-green-900 dark:text-green-100">
-                Combined TAM: $315+ Billion
+                Insight™ Mission-Critical Market Niches: $250B
               </h3>
-              <p className="text-green-800 dark:text-green-200">
-                Average market growth rate of 14.3% CAGR indicates strong demand for innovative compliance solutions
+              <p className="text-green-800 dark:text-green-200 mb-3">
+                Within the broader $250B+ global compliance technology market, Insight™ focuses on high-growth, 
+                mission-critical niches where compliance, auditability, and data integrity are essential.
               </p>
+              <p className="text-sm text-green-700 dark:text-green-300">
+                Average growth rate exceeds 17% CAGR across target sectors, driven by intensifying regulatory requirements 
+                and the critical need for verifiable audit trails.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Strategic Market Positioning */}
+        <div className="mb-20">
+          <h2 className="font-headline text-3xl font-bold mb-8 text-center">
+            Strategic Market Positioning
+          </h2>
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 rounded-xl p-8">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-6 text-center">
+                Mission-Critical Niches Within the $250B+ Global Market
+              </h3>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Rather than competing in the broader compliance technology market, Insight™ focuses on specific, 
+                high-value niches where traditional solutions fail to meet the unique requirements of regulated industries. 
+                These sectors demand:
+              </p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <Shield className="h-5 w-5 text-primary" />
+                    Critical Requirements
+                  </h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Cryptographically verifiable audit trails</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Privacy-preserving compliance validation</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>On-demand proof generation capabilities</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Regulatory-grade immutable evidence</span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold mb-4 flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                    Growth Drivers
+                  </h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Escalating regulatory complexity (EU AI Act, CISA mandates)</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>AI transparency and explainability requirements</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Zero-trust architecture implementations</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary mt-1">•</span>
+                      <span>Critical infrastructure protection mandates</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
