@@ -3,7 +3,7 @@ import {
   CoreFrameworkComponents,
   WhyInsightMatters,
   RegulatoryAlignmentMap,
-  PatentDisclaimer,
+
   WhitePaperAccess,
   ComingSoonDashboard,
   FrameworkCTA
@@ -17,8 +17,7 @@ export default function FrameworkPage() {
       <div className="container">
         <CoreFrameworkComponents />
         <WhyInsightMatters />
-        <RegulatoryAlignmentMap />
-        <PatentDisclaimer />
+
         <WhitePaperAccess />
         <ComingSoonDashboard />
         <FrameworkCTA />

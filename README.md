@@ -8,7 +8,7 @@ From excessive data streams to unknown AI black-box structures, our patent-pendi
 
 ## The Challenge
 
-AI and modern data systems generate overwhelming volumes of logs and outputs — often stored without structure or clear lineage. In regulated industries, this creates two big problems:
+AI/ML pipelines generate overwhelming volumes of logs and outputs — often stored without structure or clear lineage. In regulated industries, this creates two big problems:
 
 - **Excessive Audit Overhead** – Every event is logged "just in case," wasting storage and compute.
 - **Opaque AI Decisions** – Model outputs can't always be explained or verified.
@@ -20,7 +20,7 @@ This leaves organizations exposed to compliance risk, costly investigations, and
 Insight™ is our cryptographic audit framework that applies **selective, on-demand proof generation** to the compliance challenge:
 
 - **On-Demand Proof Generation** – Audit evidence is created only when needed, without sacrificing integrity.
-- **Merkle-Tree Anchoring** – Verifies that data hasn't been altered — even across millions of events.
+- **Provenance-Chain Anchoring** – Verifies that data hasn't been altered — even across millions of events.
 - **Trigger-Based Materialization** – Switches from lazy to eager logging instantly when a compliance event occurs.
 - **Zero-Knowledge Encryption** – Protects sensitive data while still enabling verification.
 

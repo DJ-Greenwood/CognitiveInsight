@@ -17,23 +17,13 @@ export function FrameworkHeroSection() {
 
       <div className="relative container py-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center text-white">
-          <Badge variant="secondary" className="mb-6 bg-sky-100 text-sky-900 border-sky-200">
-            <Shield className="w-4 h-4 mr-2" />
-            Patent-Pending Technology
-          </Badge>
-          
           <h1 className="font-headline text-5xl md:text-7xl font-bold tracking-tighter mb-6">
             Cognitive Insight™ Framework
           </h1>
           
           <p className="text-xl md:text-2xl text-sky-100 mb-4 max-w-3xl mx-auto">
             Governance and verification through cryptographic integrity and on-demand audit trails.
-          </p>
-          
-          <p className="text-lg text-sky-200/80 mb-12 max-w-2xl mx-auto">
-            Patent-pending technology for verifiable trust and streamlined compliance.
-          </p>
-
+          </p>          
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-slate-900 hover:bg-white/90" asChild>
               <Link href="/contact?interest=technical-overview">
@@ -41,7 +31,7 @@ export function FrameworkHeroSection() {
                 Request Technical Overview
               </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+            <Button size="lg" variant="outline" className="border-white/30 text-gray-600 hover:bg-white/10" asChild>
               <Link href="/contact?interest=executive-summary">
                 <Download className="w-5 h-5 mr-2" />
                 Download Executive Summary

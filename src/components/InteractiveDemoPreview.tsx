@@ -23,7 +23,7 @@ import Link from 'next/link';
 const demoSteps = [
   {
     id: 1,
-    title: 'Upload Data',
+    title: 'Data',
     description: 'Securely upload your ML model outputs or audit data',
     icon: Upload,
     status: 'complete',
@@ -40,7 +40,7 @@ const demoSteps = [
     status: 'complete',
     color: 'text-blue-600',
     bgColor: 'bg-blue-100 dark:bg-blue-900/20',
-    detail: 'SHA-256 hash with merkle tree structure',
+    detail: 'SHA-256 hash with provenance tree structure',
     tech: 'Tamper-evident cryptographic anchoring'
   },
   {
@@ -258,7 +258,7 @@ export function InteractiveDemoPreview() {
                     <div className="text-green-600">✓ Data Integrity: VERIFIED</div>
                     <div className="text-blue-600">✓ Cryptographic Anchor: 0x7a9b2c8d...</div>
                     <div className="text-purple-600">✓ Timestamp: 2025-08-12T10:30:45Z</div>
-                    <div className="text-orange-600">✓ Verification Method: SHA-256 + Merkle Tree</div>
+                    <div className="text-orange-600">✓ Verification Method: SHA-256 + Provenance Tree</div>
                     <div className="text-gray-600">📄 Report Size: 2.1 KB (vs 2.3 MB raw data)</div>
                   </div>
                   

@@ -36,7 +36,7 @@ const pilotBenefits = [
 
 const pilotRequirements = [
   'Regulated industry (healthcare, finance, defense, or critical infrastructure)',
-  'Existing AI/ML systems requiring audit compliance',
+  'Existing AI/ML pipelines requiring audit compliance',
   'Technical team available for integration and testing',
   'Commitment to 3-6 month pilot program duration'
 ];

@@ -86,7 +86,7 @@ export default function AboutPage() {
               <div className="space-y-4">
                 <div className="bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg p-6">
                   <p className="text-foreground leading-relaxed mb-4">
-                    <strong>Modern AI and data systems are generating audit requirements faster than organizations can handle.</strong>
+                    <strong>Modern AI/ML pipelines are generating audit requirements faster than organizations can handle.</strong>
                     The traditional approach — “log everything, sort it out later” — is breaking down under the volume and complexity.
                   </p>
                   <ul className="space-y-2 text-muted-foreground">
@@ -122,7 +122,7 @@ export default function AboutPage() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="text-green-500 mt-1">•</span>
-                      <span>EU AI Act requires comprehensive audit trails for high-risk AI systems</span>
+                      <span>EU AI Act requires comprehensive audit trails for high-risk AI/ML pipelines</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-green-500 mt-1">•</span>
@@ -235,7 +235,7 @@ export default function AboutPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">Developer of data integrity solutions that scale from IoT devices to enterprise AI systems.</p>
+                  <p className="text-muted-foreground">Developer of data integrity solutions that scale from IoT devices to enterprise AI/ML pipelines.</p>
                 </CardContent>
               </Card>
             </div>

@@ -31,12 +31,12 @@ class MockCIAFService implements CIAFService {
   }) {
     // Simulate cryptographic operations
     const fingerprint = this.generateFingerprint(params.dataset_id, params.metadata);
-    const merkleRoot = this.generateMerkleRoot(params.dataset_id);
+    const provenanceRoot = this.generateProvenanceRoot(params.dataset_id);
     
     const anchor = {
       dataset_id: params.dataset_id,
       dataset_fingerprint: fingerprint,
-      merkle_root: merkleRoot,
+      provenance_root: provenanceRoot,
       created_at: new Date().toISOString(),
       metadata: params.metadata,
     };
@@ -55,9 +55,9 @@ class MockCIAFService implements CIAFService {
     return `fp_${Buffer.from(data).toString('base64').slice(0, 16)}`;
   }
 
-  private generateMerkleRoot(datasetId: string): string {
-    // Mock Merkle root generation
-    return `mr_${Buffer.from(datasetId).toString('base64').slice(0, 16)}`;
+  private generateProvenanceRoot(datasetId: string): string {
+    // Mock provenance root generation
+    return `pr_${Buffer.from(datasetId).toString('base64').slice(0, 16)}`;
   }
 
   async getDatasetAnchor(datasetId: string) {

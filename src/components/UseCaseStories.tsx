@@ -42,7 +42,7 @@ const useCases = [
   {
     icon: Shield,
     industry: 'Defense & Government',
-    title: 'DoD AI Systems',
+    title: 'DoD AI/ML Pipelines',
     challenge: 'Classified AI models needed audit trails for security clearance reviews without compromising operational security or model architectures.',
     solution: 'Zero-knowledge proofs demonstrate model integrity and decision lineage while maintaining classification boundaries.',
     outcome: 'Full audit compliance achieved with zero classified information disclosure.',

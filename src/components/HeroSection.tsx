@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sparkles } from 'lucide-react';
 
+
 export function HeroSection() {
   return (
     <section className="relative w-full py-24 md:py-32 lg:py-40 bg-gradient-to-br from-sky-900 via-blue-800 to-sky-700">
@@ -13,7 +14,7 @@ export function HeroSection() {
             Turn Confusion into Clarity
           </h1>
           <p className="mx-auto max-w-[800px] text-lg md:text-xl text-sky-100">
-            A patent-pending audit layer for AI and Modern Data Systems that issues verifiable, tamper-evident receipts on demand—without logging everything.
+            A patent-pending audit layer for AI/ML Pipelines that issues verifiable, tamper-evident receipts on demand—without logging everything.
           </p>
         </div>
 

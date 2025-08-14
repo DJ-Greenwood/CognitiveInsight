@@ -871,7 +871,7 @@ export default function ModelDemoPage() {
         <div className="text-center mb-8">
           <h2 className="font-headline text-2xl font-bold mb-4">Why This Matters</h2>
           <p className="text-muted-foreground max-w-3xl mx-auto mb-2">
-            Traditional AI systems create a choice between transparency and privacy. Our selective proof generation 
+            Traditional AI/ML pipelines create a choice between transparency and privacy. Our selective proof generation 
             breaks this trade-off, enabling verifiable AI decisions without exposing sensitive data or model internals.
           </p>
           <p className="text-sm text-muted-foreground max-w-2xl mx-auto">

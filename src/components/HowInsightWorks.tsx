@@ -15,12 +15,12 @@ const insightFeatures = [
   {
     icon: Activity,
     title: 'End-to-End Provenance',
-    description: 'Datasets, models, and runs are traceable'
+    description: 'Datasets, models, and inference are traceable'
   },
   {
     icon: Timer,
     title: 'Sub-Second Verification',
-    description: 'At scale via Merkle anchoring'
+    description: 'At scale via provenance anchoring'
   }
 ];
 

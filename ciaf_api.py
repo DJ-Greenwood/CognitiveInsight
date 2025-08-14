@@ -295,7 +295,7 @@ async def train_model(
             training_snapshot={
                 "snapshot_id": snapshot.snapshot_id,
                 "model_version": snapshot.model_version,
-                "merkle_root_hash": snapshot.merkle_root_hash,
+                "provenance_root_hash": snapshot.merkle_root_hash,
                 "training_completed_at": datetime.utcnow().isoformat(),
                 "training_params": request.training_params
             }

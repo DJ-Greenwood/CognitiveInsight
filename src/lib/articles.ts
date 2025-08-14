@@ -17,7 +17,7 @@ export const articles: Article[] = [
 <p>The EU AI Act represents a landmark in artificial intelligence regulation. Its risk-based approach requires organizations to demonstrate robust governance, transparency, and accountability. This is where the Cryptographically Integrated AI Framework (CIAF) becomes essential.</p>
 <h3 class="font-headline text-xl font-semibold mt-6 mb-2">Key Alignments:</h3>
 <ul class="list-disc pl-6 space-y-2">
-  <li><strong>High-Risk Systems:</strong> CIAF's Dataset Anchors and Model Anchor Keys (MAKs) provide the verifiable audit trails required for high-risk AI systems under the Act.</li>
+  <li><strong>High-Risk Pipelines:</strong> CIAF's Dataset Anchors and Model Anchor Keys (MAKs) provide the verifiable audit trails required for high-risk AI/ML pipelines under the Act.</li>
   <li><strong>Transparency Obligations:</strong> Uncertainty Receipts directly address the need for transparency, allowing practitioners to disclose model risk without exposing sensitive data.</li>
   <li><strong>Data Governance:</strong> The framework's emphasis on data provenance ensures compliance with the stringent data quality and governance requirements of the Act.</li>
 </ul>
@@ -29,9 +29,9 @@ export const articles: Article[] = [
   {
     slug: 'audit-receipts-future-of-governance',
     title: 'Why Audit Receipts Will Define AI Governance in the Next Decade',
-    excerpt: 'Explore the concept of "Compliance Receipts" and why they are the key to building trust between AI systems, regulators, and the public.',
+    excerpt: 'Explore the concept of "Compliance Receipts" and why they are the key to building trust between AI/ML pipelines, regulators, and the public.',
     content: `
-<p>In the coming years, AI governance will hinge on one critical element: verifiable proof. It won't be enough to say an AI system is fair or compliant; organizations will need to prove it. This is the challenge that Compliance Receipts, a core component of CIAF, are designed to solve.</p>
+<p>In the coming years, AI governance will hinge on one critical element: verifiable proof. It won't be enough to say an AI/ML pipeline is fair or compliant; organizations will need to prove it. This is the challenge that Compliance Receipts, a core component of CIAF, are designed to solve.</p>
 <h3 class="font-headline text-xl font-semibold mt-6 mb-2">The Power of Receipts:</h3>
 <ul class="list-disc pl-6 space-y-2">
   <li><strong>Immutable Records:</strong> Each receipt is a cryptographically sealed, tamper-evident record of a model's decision-making process, including its known limitations and uncertainties.</li>

@@ -6,6 +6,9 @@ export { HowInsightWorks } from './HowInsightWorks';
 export { WhereItHelps } from './WhereItHelps';
 export { InsightVsMLTooling } from './InsightVsMLTooling';
 export { StandardsAlignment } from './StandardsAlignment';
+export { ComingSoon } from './ComingSoon';
+export { HowThisCameAbout } from './HowThisCameAbout';
+
 
 
 // Framework page sections
