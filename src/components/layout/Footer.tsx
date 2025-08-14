@@ -1,4 +1,5 @@
 import { Scale, FileText } from 'lucide-react';
+import { PatentNotice  } from '../PatentNotice';
 
 export function Footer() {
   return (
@@ -11,8 +12,7 @@ export function Footer() {
               <strong>Insight™</strong> - Turn Confusion to Clarity
             </p>
             <p className="text-xs text-muted-foreground/80 flex items-center justify-center md:justify-start mt-1">
-              <FileText className="h-3 w-3 mr-1" />
-              Patent-pending cryptographic audit framework
+              <PatentNotice  />
             </p>
           </div>
         </div>
