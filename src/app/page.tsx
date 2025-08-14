@@ -1,6 +1,6 @@
 import {
   HeroSection,
-  ValueAtGlanceSimple,
+  ValueAtGlance,
   HowInsightWorks,
   WhereItHelps,
   InsightVsMLTooling,
@@ -17,7 +17,7 @@ export default function Home() {
 
       <main className="flex-1">
         <HeroSection />
-        <ValueAtGlanceSimple />
+        <ValueAtGlance />
         <HowInsightWorks />
         <InteractiveDemoPreview />
         <WhereItHelps />
