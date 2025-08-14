@@ -4,7 +4,7 @@ import { Database, KeyRound, Receipt, BookCheck } from 'lucide-react';
 const coreComponents = [
   {
     icon: Database,
-    title: 'Data Anchors',
+    title: 'Data Lineage',
     description: 'Immutable cryptographic fingerprints that verify the integrity and origin of records across their lifecycle. Establish trusted foundations for all downstream operations.',
     bgColor: 'bg-blue-100 dark:bg-blue-900/20',
     iconColor: 'text-blue-600 dark:text-blue-400'
