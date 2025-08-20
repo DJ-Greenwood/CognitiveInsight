@@ -2,23 +2,23 @@ import { spawn, ChildProcess } from 'child_process';
 import { EventEmitter } from 'events';
 import path from 'path';
 
-interface CIAFRequest {
+interface InsightRequest {
   operation: string;
   params: Record<string, any>;
 }
 
-interface CIAFResponse {
+interface InsightResponse {
   success: boolean;
   error?: string;
   [key: string]: any;
 }
 
-export class CIAFBridge extends EventEmitter {
+export class InsightBridge extends EventEmitter {
   private pythonProcess: ChildProcess | null = null;
   private isConnected = false;
   private requestQueue: Array<{
-    request: CIAFRequest;
-    resolve: (value: CIAFResponse) => void;
+    request: InsightRequest;
+    resolve: (value: InsightResponse) => void;
     reject: (error: Error) => void;
   }> = [];
 
@@ -32,7 +32,7 @@ export class CIAFBridge extends EventEmitter {
     }
 
     try {
-      const bridgeScriptPath = path.join(process.cwd(), 'ciaf_bridge.py');
+      const bridgeScriptPath = path.join(process.cwd(), 'insight_bridge.py');
       
       this.pythonProcess = spawn('python', [bridgeScriptPath], {
         stdio: ['pipe', 'pipe', 'pipe'],
@@ -72,7 +72,7 @@ export class CIAFBridge extends EventEmitter {
       
       for (const line of lines) {
         if (line.trim()) {
-          const response: CIAFResponse = JSON.parse(line);
+          const response: InsightResponse = JSON.parse(line);
           
           // Process the next request in queue
           const queueItem = this.requestQueue.shift();
@@ -90,13 +90,13 @@ export class CIAFBridge extends EventEmitter {
     }
   }
 
-  async sendRequest(operation: string, params: Record<string, any>): Promise<CIAFResponse> {
+  async sendRequest(operation: string, params: Record<string, any>): Promise<InsightResponse> {
     if (!this.isConnected || !this.pythonProcess) {
       throw new Error('Python bridge is not connected');
     }
 
     return new Promise((resolve, reject) => {
-      const request: CIAFRequest = { operation, params };
+      const request: InsightRequest = { operation, params };
       
       this.requestQueue.push({ request, resolve, reject });
       
@@ -108,7 +108,7 @@ export class CIAFBridge extends EventEmitter {
   async createDatasetAnchor(params: {
     dataset_id: string;
     metadata: Record<string, any>;
-  }): Promise<CIAFResponse> {
+  }): Promise<InsightResponse> {
     return this.sendRequest('create_dataset_anchor', params);
   }
 
@@ -119,7 +119,7 @@ export class CIAFBridge extends EventEmitter {
       content: string;
       metadata: Record<string, any>;
     }>;
-  }): Promise<CIAFResponse> {
+  }): Promise<InsightResponse> {
     return this.sendRequest('create_provenance_capsules', params);
   }
 
@@ -129,7 +129,7 @@ export class CIAFBridge extends EventEmitter {
     output_prediction: Record<string, any>;
     confidence_score: number;
     metadata?: Record<string, any>;
-  }): Promise<CIAFResponse> {
+  }): Promise<InsightResponse> {
     return this.sendRequest('create_inference_receipt', params);
   }
 
@@ -137,7 +137,7 @@ export class CIAFBridge extends EventEmitter {
     item_id: string;
     item_type: 'dataset_anchor' | 'provenance_capsule' | 'inference_receipt';
     verification_data?: Record<string, any>;
-  }): Promise<CIAFResponse> {
+  }): Promise<InsightResponse> {
     return this.sendRequest('verify_item', params);
   }
 
@@ -149,7 +149,7 @@ export class CIAFBridge extends EventEmitter {
       model_ids?: string[];
       compliance_threshold?: number;
     };
-  }): Promise<CIAFResponse> {
+  }): Promise<InsightResponse> {
     return this.sendRequest('generate_report', params);
   }
 
@@ -163,20 +163,20 @@ export class CIAFBridge extends EventEmitter {
 }
 
 // Singleton instance
-let bridgeInstance: CIAFBridge | null = null;
+let bridgeInstance: InsightBridge | null = null;
 
-export function getCIAFBridge(): CIAFBridge {
+export function getInsightBridge(): InsightBridge {
   if (!bridgeInstance) {
-    bridgeInstance = new CIAFBridge();
+    bridgeInstance = new InsightBridge();
   }
   return bridgeInstance;
 }
 
 // Utility function for API routes
-export async function withCIAFBridge<T>(
-  operation: (bridge: CIAFBridge) => Promise<T>
+export async function withInsightBridge<T>(
+  operation: (bridge: InsightBridge) => Promise<T>
 ): Promise<T> {
-  const bridge = getCIAFBridge();
+  const bridge = getInsightBridge();
   
   if (!bridge['isConnected']) {
     await bridge.connect();
@@ -184,3 +184,4 @@ export async function withCIAFBridge<T>(
   
   return operation(bridge);
 }
+

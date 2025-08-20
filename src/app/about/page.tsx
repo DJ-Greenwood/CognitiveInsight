@@ -2,6 +2,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Lightbulb, Heart, FileText, Building, DollarSign, Shield, Activity, Factory, Users, Mail, Clock, Sparkles } from 'lucide-react';
 
 const industries = [
@@ -179,10 +180,15 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="flex justify-center items-start">
-              <div className="bg-muted/30 rounded-full aspect-square shadow-lg border-2 border-dashed border-muted-foreground/20 p-8 w-64 h-64 flex flex-col items-center justify-center">
-                <div className="text-5xl mb-3">👨‍💻</div>
-                <h3 className="text-lg font-semibold text-muted-foreground mb-1">Coming Soon</h3>
-                <p className="text-sm text-muted-foreground text-center">Founder Photo</p>
+              <div className="rounded-full aspect-square shadow-lg border-2 border-primary/20 overflow-hidden w-64 h-64">
+              <Image 
+                src="/images/Profile_image.jpg" 
+                alt="Denzil James Greenwood" 
+                width={256}
+                height={256}
+                className="w-full h-full object-cover"
+                priority
+              />
               </div>
             </div>
           </div>

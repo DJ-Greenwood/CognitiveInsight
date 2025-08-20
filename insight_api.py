@@ -1,8 +1,8 @@
 """
-CIAF REST API Server
+Insight REST API Server
 
 FastAPI-based REST API for the Cognitive Insight AI Framework.
-Provides HTTP endpoints for all CIAF operations.
+Provides HTTP endpoints for all Insight operations.
 """
 
 from fastapi import FastAPI, HTTPException, Depends, Security, status
@@ -16,12 +16,12 @@ import logging
 import os
 from contextlib import asynccontextmanager
 
-# Import CIAF modules
+# Import Insight modules
 import sys
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-from models.ciaf import (
-    CIAFFramework,
+from models.insight import (
+    InsightFramework,
     DatasetAnchor,
     ProvenanceCapsule,
     ModelAggregationKey,
@@ -39,14 +39,14 @@ logger = logging.getLogger(__name__)
 security = HTTPBearer()
 
 # Global CIAF framework instance
-ciaf_framework: Optional[CIAFFramework] = None
+insight_framework: Optional[InsightFramework] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """Application lifespan management"""
-    global ciaf_framework
+    global insight_framework
     logger.info("Starting CIAF API Server...")
-    ciaf_framework = CIAFFramework("CIAF_API_Server")
+    insight_framework = InsightFramework("insight_API_Server")
     yield
     logger.info("Shutting down CIAF API Server...")
 
@@ -139,9 +139,9 @@ async def verify_token(credentials: HTTPAuthorizationCredentials = Security(secu
     """Verify API token - implement your authentication logic here"""
     token = credentials.credentials
     
-    # For demo purposes, accept any token starting with "ciaf_"
+    # For demo purposes, accept any token starting with "insight_"
     # In production, implement proper JWT validation or API key verification
-    if not token.startswith("ciaf_"):
+    if not token.startswith("insight_"):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Invalid authentication token",
@@ -169,7 +169,7 @@ async def create_dataset_anchor(
     try:
         logger.info(f"Creating dataset anchor: {request.dataset_id}")
         
-        anchor = ciaf_framework.create_dataset_anchor(
+        anchor = insight_framework.create_dataset_anchor(
             dataset_id=request.dataset_id,
             dataset_metadata=request.metadata.dict(),
             master_password=request.master_password
@@ -197,10 +197,10 @@ async def get_dataset_anchor(
 ):
     """Get dataset anchor information"""
     try:
-        if dataset_id not in ciaf_framework.dataset_anchors:
+        if dataset_id not in insight_framework.dataset_anchors:
             raise HTTPException(status_code=404, detail="Dataset anchor not found")
             
-        anchor = ciaf_framework.dataset_anchors[dataset_id]
+        anchor = insight_framework.dataset_anchors[dataset_id]
         
         return {
             "success": True,
@@ -236,7 +236,7 @@ async def create_provenance_capsules(
                 "metadata": {**item.metadata, "id": item.id}
             })
         
-        capsules = ciaf_framework.create_provenance_capsules(
+        capsules = insight_framework.create_provenance_capsules(
             dataset_id=request.dataset_id,
             data_items=data_items
         )
@@ -272,7 +272,7 @@ async def train_model(
         logger.info(f"Training model: {request.model_name} v{request.model_version}")
         
         # Create Model Aggregation Key
-        mak = ciaf_framework.create_model_aggregation_key(
+        mak = insight_framework.create_model_aggregation_key(
             model_name=request.model_name,
             authorized_datasets=request.authorized_datasets
         )
@@ -282,7 +282,7 @@ async def train_model(
         capsules = []
         
         # Train model
-        snapshot = ciaf_framework.train_model(
+        snapshot = insight_framework.train_model(
             model_name=request.model_name,
             capsules=capsules,
             mak=mak,
@@ -316,7 +316,7 @@ async def create_inference_receipt(
         logger.info(f"Creating inference receipt for model: {request.model_name}")
         
         # Create inference receipt (simplified for demo)
-        from models.ciaf.inference import InferenceReceipt
+        from models.insight.inference import InferenceReceipt
         
         receipt = InferenceReceipt(
             query=request.query,
@@ -386,7 +386,7 @@ async def query_audit_trail(
 async def list_models(token: str = Depends(verify_token)):
     """List all registered models"""
     try:
-        models = list(ciaf_framework.ml_simulators.keys())
+        models = list(insight_framework.ml_simulators.keys())
         return {
             "success": True,
             "models": models,
@@ -401,7 +401,7 @@ async def list_datasets(token: str = Depends(verify_token)):
     """List all dataset anchors"""
     try:
         datasets = []
-        for dataset_id, anchor in ciaf_framework.dataset_anchors.items():
+        for dataset_id, anchor in insight_framework.dataset_anchors.items():
             datasets.append({
                 "dataset_id": dataset_id,
                 "fingerprint": anchor.dataset_fingerprint,
@@ -424,7 +424,7 @@ async def get_performance_metrics(
 ):
     """Get performance metrics for a dataset"""
     try:
-        metrics = ciaf_framework.get_performance_metrics(dataset_id)
+        metrics = insight_framework.get_performance_metrics(dataset_id)
         return {
             "success": True,
             "metrics": metrics
@@ -435,9 +435,10 @@ async def get_performance_metrics(
 
 if __name__ == "__main__":
     uvicorn.run(
-        "ciaf_api:app",
+        "insight_api:app",
         host="0.0.0.0",
         port=8000,
         reload=True,
         log_level="info"
     )
+

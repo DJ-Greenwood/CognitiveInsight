@@ -50,3 +50,7 @@ firestore-debug.log
 
 # remove public folder
 /public
+
+# remove the Insight folder
+backend/models/insight
+backend

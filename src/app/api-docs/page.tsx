@@ -17,7 +17,7 @@ export default function ApiDocsPage() {
             API Documentation
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Comprehensive documentation for the CIAF API endpoints and integration guides.
+            Comprehensive documentation for the Insight API endpoints and integration guides.
           </p>
         </div>
 

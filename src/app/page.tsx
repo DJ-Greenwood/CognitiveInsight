@@ -1,6 +1,6 @@
 import {
   HeroSection,
-  ValueAtGlance,
+// ValueAtGlance, 
   HowInsightWorks,
  // These are going to be moved to other sections of this site, maybe reworked ?
  // WhereItHelps,
@@ -23,7 +23,7 @@ export default function Home() {
       <main className="flex-1">
         <ComingSoon />
         <HeroSection />
-        <ValueAtGlance />
+        
         <HowInsightWorks /> 
       </main>
     </div>

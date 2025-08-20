@@ -9,7 +9,7 @@ const insightFeatures = [
   },
   {
     icon: Layers,
-    title: 'Lazy Capsule Materialization',
+    title: 'Insight Capsule Creation',
     description: 'Proofs generated only when needed'
   },
   {

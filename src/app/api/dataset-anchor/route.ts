@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { withCIAFBridge } from '@/lib/ciaf-bridge';
+import { withCIAFBridge } from '@/lib/insight-bridge';
 
 // Request/Response schemas
 const CreateDatasetAnchorSchema = z.object({
@@ -203,3 +203,4 @@ export async function GET(request: NextRequest) {
     );
   }
 }
+

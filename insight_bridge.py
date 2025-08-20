@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-CIAF Framework Bridge Service
-A Python bridge service that connects the CIAF framework to the Next.js frontend
+Insight Framework Bridge Service
+A Python bridge service that connects the Insight framework to the Next.js frontend
 """
 
 import asyncio
@@ -18,15 +18,15 @@ models_dir = current_dir / "models"
 sys.path.insert(0, str(models_dir))
 
 try:
-    from ciaf.api.framework_new import CIAFFramework
-    from ciaf.anchoring.dataset_anchor import DatasetAnchor
-    from ciaf.provenance.provenance_capsules import ProvenanceCapsule
-    from ciaf.inference.receipts import InferenceReceipt
-    from ciaf.compliance.validators import ComplianceValidator
-    from ciaf.compliance.reports import ReportGenerator
+    from insight.api.framework_new import InsightFramework
+    from insight.anchoring.dataset_anchor import DatasetAnchor
+    from insight.provenance.provenance_capsules import ProvenanceCapsule
+    from insight.inference.receipts import InferenceReceipt
+    from insight.compliance.validators import ComplianceValidator
+    from insight.compliance.reports import ReportGenerator
 except ImportError as e:
-    print(f"Error importing CIAF modules: {e}")
-    print("Make sure the CIAF framework is properly installed")
+    print(f"Error importing Insight modules: {e}")
+    print("Make sure the Insight framework is properly installed")
     sys.exit(1)
 
 # Configure logging
@@ -36,11 +36,11 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-class CIAFBridgeService:
-    """Bridge service for connecting CIAF framework to Next.js frontend"""
+class InsightBridgeService:
+    """Bridge service for connecting Insight framework to Next.js frontend"""
     
     def __init__(self):
-        self.framework = CIAFFramework()
+        self.framework = InsightFramework()
         self.logger = logging.getLogger(self.__class__.__name__)
         
     async def create_dataset_anchor(self, data: Dict[str, Any]) -> Dict[str, Any]:
@@ -222,7 +222,7 @@ async def handle_request(request_data: str) -> str:
         operation = data.get('operation')
         params = data.get('params', {})
         
-        bridge = CIAFBridgeService()
+        bridge = InsightBridgeService()
         
         if operation == 'create_dataset_anchor':
             result = await bridge.create_dataset_anchor(params)
@@ -251,7 +251,7 @@ async def handle_request(request_data: str) -> str:
 
 async def main():
     """Main function for running the bridge service"""
-    logger.info("Starting CIAF Bridge Service")
+    logger.info("Starting Insight Bridge Service")
     
     # Read from stdin and write to stdout for communication with Node.js
     while True:

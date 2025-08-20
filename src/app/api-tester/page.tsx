@@ -17,7 +17,7 @@ export default function ApiTesterPage() {
             API Tester
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Interactive testing interface for exploring CIAF API endpoints and functionality.
+            Interactive testing interface for exploring Insight API endpoints and functionality.
           </p>
         </div>
 
